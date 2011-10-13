@@ -1,0 +1,569 @@
+html {
+	min-height: 100%; 
+	margin-bottom: 1px;
+	overflow: -moz-scrollbars-vertical !important;
+	color: #C0C0C0;
+}
+
+a:visited {
+	/* Applies to all visited links */
+	/* text-decoration:  none; */
+	color: #C0C0C0;
+}
+
+a:link    {
+  	/* Applies to all unvisited links */
+  	text-decoration:  none;
+	color: #C0C0C0;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: green;
+}
+
+body {
+	font-family:"arial",Georgia,Serif;
+	/* background-image: url('images/leaves2.jpg'); */
+	background-color: black;
+	background-size: 100%;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	font-size: 14px;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 0px auto;
+	/* background-color: #458B74; */
+}
+
+#banner {
+	height: 100px;
+	width: 980px;
+	float: left;
+	margin-bottom: 5px;
+	text-align: center;
+	/* background-color: #330033; */
+	color: #C0C0C0;
+}
+
+/* topmenu */
+#topmenu {
+	height: 20px;
+	width: 965px;
+	float: left;
+	margin-bottom: 5px;
+	/* background-color: #B0B0B0; */
+	padding: 0;
+	padding-left: 180px;
+	color: #C0C0C0;
+}
+
+#slogan {
+	float: right;
+	padding-right: 350px;
+}
+
+#topmenuitems {
+	width: 400px;
+	float: left;
+}
+
+#topmenu  ul li {
+	margin-left: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	list-style: none;
+	display: inline;
+}
+
+#topmenu a {
+	color: #C0C0C0;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#topmenu a:hover {
+	color: green;
+}
+
+#topmenu ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	border: none;
+}
+
+/* leftmenu */
+#leftmenu {
+	color: #C0C0C0;
+	width: 180px;
+	height: 600px;
+	float: left;
+	margin-bottom: 5px;
+	/* background-color: #A0A0A0; */
+}
+
+#leftmenu img {
+	width: 15%;
+	height: 15%;
+	vertical-align: middle;
+}
+
+.red {
+	color: red;
+	font-size: smaller;
+	margin: 0;
+}
+
+.menu {
+	margin: 5px 2px;
+	padding: 10px 0;
+}
+#ul a:hover {
+	color: green;
+}
+.menu li {
+	padding: 5px;
+	margin: 5px;
+}
+
+.coloredmenu {
+	/* background-color: #D0D0D0; */
+}
+
+.groupstat {
+	padding: 5px;
+	border-bottom: 1px black solid;
+}
+
+.inside {
+	background-color: #D0D0D0;
+	width: 900px;
+	height: 40px;
+	margin: 10px auto; 
+}
+
+label.error {
+			display: block;
+			color: red;
+			font-size: smaller;
+			padding-top: 3px;
+}
+
+.box {
+	padding-top: 10px;
+}
+
+#leftmenu, #ul ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#leftmenu a {
+	/* color: black; */
+	padding: 10px;
+}
+
+#leftmenu p {
+	margin-bottom: 7px;
+}
+
+#login a {
+	padding: 0px;
+}
+
+#login {
+	padding: 5px;
+	padding-bottom: 20px;
+	border-bottom: 1px black solid;
+}
+
+#content {
+	width: 610px;
+	min-height: 590px;
+	float: left;
+	margin-bottom: 15px;
+	background-color: #282828 ;
+	overflow: auto;
+	padding: 5px 5px 5px 5px;
+}
+
+#paging {
+	margin: 30px 0;
+}
+
+#paging span {
+	margin-right: 10px;
+}
+
+#paging ul li {
+	margin-left: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	list-style: none;
+	display: inline;
+}
+
+#paging a:hover {
+	text-decoration: underline;	
+}
+
+#paging a {
+    border: 1px solid #CCCCCC;
+    color: #0052A4;
+    /* display: block; */
+    padding: 6px 9px;
+    background-color: white;
+}
+
+#paging .selected{
+    border: 1px solid #CCCCCC;
+    color: white;
+    /* display: block; */
+    padding: 6px 9px;
+    background-color: #04599A;
+    margin: 0 2px 0 2px;
+}
+
+#passchange input {
+	/* float:left; */
+}
+
+#passchange label {
+	display: block;
+	width: 140px;
+	/* float: left; */	
+}
+
+#editprofile label {
+	display: block;
+	width: 100px;
+	float: left;	
+}
+
+#profile a {
+	/* width: 80px; */
+	display: block;
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 12px;
+}
+
+#addevent, #profile, #stats, #eventlist, #mail {
+	margin: 5px;
+	padding: 10px
+}
+
+#addblogg {
+	/* height: 72px; */
+	margin: 5px;
+	overflow: auto
+}
+
+#addblogg  input{
+	margin-top: 4px;
+}
+
+#blogginput {
+	width: 140px;
+	max-height: 35px;
+}
+
+#profile p {
+	margin-bottom: 3px;
+	margin-top: 3px;
+}
+
+.info {
+	margin: 5px;
+	width: 590px;
+	clear: both;
+}
+
+.info h3 {
+	margin: 15px 0 0 0;
+}
+
+.infodevider {
+	height: 10px;
+	clear: both;
+	border-bottom: 1px grey solid;
+}
+.small {
+	font-size: 9px;
+}
+
+.event span{
+	padding-right: 100px;
+}
+
+#eventblogg p, h4 {
+	margin: 3px;
+}
+
+#eventblogg  {
+	/* height: 470px; */
+	overflow: auto;
+	/* background-color: #D0D0D0; */
+}
+
+.elasticinfo {
+	overflow: auto;	
+}
+
+#rightmenu {
+	width: 180px;
+	height: 600px;
+	float: left;
+	margin-bottom: 5px;
+	/* background-color: #A0A0A0; */
+}
+
+#rightmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#rightmenu li {
+	margin: 5px;
+}
+
+.infopic {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+}
+
+.profilepic {
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: 10px;
+	margin: 0;
+}
+.infocontent {
+	float: left;
+	width: 400px;
+}
+
+#trainpic img {
+	width: 20%;
+	height: 20%;
+}
+
+#trainpic {
+	text-align:center;
+}
+
+#peppheader {
+	text-align: center;
+}
+
+#footer {
+	height: 60px;
+	float: left;
+	width: 980px;
+	text-align: center;
+	/* background-color: #330033; */
+	color: white;
+}
+
+.corners {
+	border-bottom-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+#footer p {
+	margin: 17px;
+}
+.button { 
+	display: inline-block; 
+	outline: none; 
+	cursor: pointer; 
+	text-align: center; 
+	text-decoration: none; 
+	font: 14px/100% Arial, Helvetica, sans-serif; 
+	padding: .5em 2em .55em; 
+	text-shadow: 0 1px 1px rgba(0,0,0,.3); 
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em; 
+	border-radius: .5em; 
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+	box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+}
+
+.buttonsmall {
+	padding: .1em 1em .1em;	
+}
+
+.button:hover { 
+	text-decoration: none; 
+}
+
+.button:active { 
+	position: relative; 
+	top: 1px;
+} 
+
+
+
+/* Easy Slider */
+
+#slider ul, #slider li,
+#slider2 ul, #slider2 li{
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+#slider2{margin-top:1em;}
+#slider li, #slider2 li{ 
+	/* 
+		define width and height of list item (slide)
+		entire slider area will adjust according to the parameters provided here
+	*/ 
+	width:980px;
+	height:50px;
+	overflow:hidden; 
+	}	
+#prevBtn, #nextBtn,
+#slider1next, #slider1prev{ 
+	display:block;
+	width:30px;
+	height:77px;
+	position:absolute;
+	left:-30px;
+	top:71px;
+	z-index:1000;
+	}	
+#nextBtn, #slider1next{ 
+	left:1200px;
+	}														
+#prevBtn a, #nextBtn a,
+#slider1next a, #slider1prev a{  
+	display:block;
+	position:relative;
+	width:30px;
+	height:77px;
+	background:url(../images/btn_prev.gif) no-repeat 0 0;	
+	}	
+#nextBtn a, #slider1next a{ 
+	background:url(../images/btn_next.gif) no-repeat 0 0;	
+	}	
+	
+/* numeric controls */	
+
+ol#controls{
+	margin:1em 0;
+	padding:0;
+	height:28px;	
+	}
+ol#controls li{
+	margin:0 10px 0 0; 
+	padding:0;
+	float:left;
+	list-style:none;
+	height:28px;
+	line-height:28px;
+	}
+ol#controls li a{
+	float:left;
+	height:28px;
+	line-height:28px;
+	border:1px solid #ccc;
+	background:#DAF3F8;
+	color:#555;
+	padding:0 10px;
+	text-decoration:none;
+	}
+ol#controls li.current a{
+	background:#989898;
+	color:#fff;
+	}
+ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{
+	outline: none;
+}
+	
+/* // Easy Slider */
+
+.event .calendar{
+	margin:.25em 10px 10px 0;
+	padding-top:5px;
+	float:left;
+	width:80px;
+	background:#ededef;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#ccc)); 
+	background: -moz-linear-gradient(top,  #ededef,  #ccc); 
+	font:bold 30px/60px Arial Black, Arial, Helvetica, sans-serif;
+	text-align:center;
+	color:#000;
+	text-shadow:#fff 0 1px 0;	
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;	
+	position:relative;
+	-moz-box-shadow:0 2px 2px #888;
+	-webkit-box-shadow:0 2px 2px #888;
+	box-shadow:0 2px 2px #888;
+	}
+	
+.event .calendar em{
+	display:block;
+	font:normal bold 11px/30px Arial, Helvetica, sans-serif;
+	color:#fff;
+	text-shadow:#00365a 0 -1px 0;	
+	background:#04599a;
+	background:-webkit-gradient(linear, left top, left bottom, from(#04599a), to(#00365a)); 
+	background:-moz-linear-gradient(top,  #04599a,  #00365a); 
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;	
+	border-bottom-right-radius:3px;
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;	
+	border-bottom-left-radius:3px;	
+	border-top:1px solid #00365a;
+	}
+	
+.event .calendar:before, .calendar:after{
+	content:'';
+	float:left;
+	position:absolute;
+	top:5px;	
+	width:8px;
+	height:8px;
+	background:#111;
+	z-index:1;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	-moz-box-shadow:0 1px 1px #fff;
+	-webkit-box-shadow:0 1px 1px #fff;
+	box-shadow:0 1px 1px #fff;
+	}
+.event .calendar:before{left:11px;}	
+.event .calendar:after{right:11px;}
+
+.event .calendar em:before, .calendar em:after{
+	content:'';
+	float:left;
+	position:absolute;
+	top:-5px;	
+	width:4px;
+	height:14px;
+	background:#dadada;
+	background:-webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#aaa)); 
+	background:-moz-linear-gradient(top,  #f1f1f1,  #aaa); 
+	z-index:2;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	}
+.event .calendar em:before{left:13px;}	
+.event .calendar em:after{right:13px;}

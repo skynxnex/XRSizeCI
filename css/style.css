@@ -1,0 +1,459 @@
+html {
+	min-height: 100%; 
+	margin-bottom: 1px;
+	overflow: -moz-scrollbars-vertical !important;
+}
+
+body {
+	font-family:"arial",Georgia,Serif;
+	background-image: url('images/leaves2.jpg');
+	background-size: 100%;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	font-size: 14px;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 0px auto;
+	background-color: #458B74;
+}
+
+#banner {
+	height: 100px;
+	width: 980px;
+	float: left;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color: #330033;
+	color: white;
+}
+
+/* topmenu */
+#topmenu {
+	height: 20px;
+	width: 965px;
+	float: left;
+	margin-bottom: 5px;
+	background-color: #B0B0B0;
+	padding: 0;
+	padding-left: 15px;
+}
+
+#slogan {
+	float: right;
+	padding-right: 15px;
+}
+
+#topmenuitems {
+	width: 700px;
+	float: left;
+}
+
+#topmenu  ul li {
+	margin-left: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	list-style: none;
+	display: inline;
+}
+
+#topmenu a {
+	text-decoration: none;
+	color: black;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#topmenu a:hover {
+	color: green;
+}
+
+#topmenu ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	border: none;
+}
+
+/* leftmenu */
+#leftmenu {
+	width: 180px;
+	height: 600px;
+	float: left;
+	margin-bottom: 5px;
+	background-color: #A0A0A0;
+}
+
+#leftmenu img {
+	width: 15%;
+	height: 15%;
+	vertical-align: middle;
+}
+
+.red {
+	color: red;
+	font-size: smaller;
+	margin: 0;
+}
+
+.menu {
+	margin: 5px 2px;
+	padding: 10px 0;
+}
+#ul a:hover {
+	color: green;
+}
+.menu li {
+	padding: 5px;
+	margin: 5px;
+}
+
+.coloredmenu {
+	background-color: #D0D0D0;
+}
+
+.groupstat {
+	padding: 5px;
+	border-bottom: 1px black solid;
+}
+
+.inside {
+	background-color: #D0D0D0;
+	width: 900px;
+	height: 40px;
+	margin: 10px auto; 
+}
+
+label.error {
+			display: block;
+			color: red;
+			font-size: smaller;
+			padding-top: 3px;
+}
+
+.box {
+	padding-top: 10px;
+}
+
+#leftmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#leftmenu a {
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+}
+
+#leftmenu p {
+	margin-bottom: 7px;
+}
+
+#login a {
+	
+	background: silver;
+	padding: 4px;
+}
+
+#login {
+	padding: 5px;
+	padding-bottom: 20px;
+	border-bottom: 1px black solid;
+}
+
+#content {
+	width: 610px;
+	min-height: 590px;
+	float: left;
+	margin-bottom: 15px;
+	background-color: #FFCC99;
+	overflow: auto;
+	padding: 5px 5px 5px 5px;
+}
+
+#paging  ul li {
+	margin-left: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	list-style: none;
+	display: inline;
+}
+
+#passchange label {
+	display: block;
+	width: 140px;
+	float: left;	
+}
+
+#editprofile label {
+	display: block;
+	width: 100px;
+	float: left;	
+}
+
+#profile a {
+	width: 80px;
+	display: block;
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 12px;
+}
+
+#addevent, #profile, #stats, #eventlist, #mail {
+	margin: 5px;
+	padding: 10px
+}
+
+#addblogg {
+	height: 72px;
+	margin: 5px;
+	overflow: auto
+}
+
+#addblogg  input{
+	margin-top: 4px;
+}
+
+#blogginput {
+	width: 163px;
+	max-height: 35px;
+}
+
+#profile p {
+	margin-bottom: 3px;
+	margin-top: 3px;
+}
+
+.info {
+	margin: 5px;
+	width: 590px;
+	clear: both;
+}
+
+.info h3 {
+	margin: 15px 0 0 0;
+}
+
+.infodevider {
+	height: 10px;
+	clear: both;
+	border-bottom: 1px grey solid;
+}
+.small {
+	font-size: 9px;
+}
+
+.event span{
+	padding-right: 100px;
+}
+
+#eventblogg p, h4 {
+	margin: 3px;
+}
+
+#eventblogg  {
+	height: 470px;
+	overflow: auto;
+	background-color: #D0D0D0;
+}
+
+.elasticinfo {
+	overflow: auto;	
+}
+
+#rightmenu {
+	width: 180px;
+	height: 600px;
+	float: left;
+	margin-bottom: 5px;
+	background-color: #A0A0A0;
+}
+
+#rightmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#rightmenu li {
+	margin: 5px;
+}
+
+.infopic {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+}
+
+.profilepic {
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: 10px;
+	margin: 0;
+}
+.infocontent {
+	float: left;
+	width: 400px;
+}
+
+#trainpic img {
+	width: 20%;
+	height: 20%;
+}
+
+#trainpic {
+	text-align:center;
+}
+
+#peppheader {
+	text-align: center;
+}
+
+#footer {
+	height: 60px;
+	float: left;
+	width: 980px;
+	text-align: center;
+	background-color: #330033;
+	color: white;
+}
+
+.corners {
+	border-bottom-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+#footer p {
+	margin: 17px;
+}
+.button {
+    /* Disables default styling */
+    border: none;
+    background: #00B6FF;
+    color: #fff;
+
+    /* You need to set font, font size and cursor for buttons */
+    font-size: 15px;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    cursor: pointer;
+
+    padding: 8px 13px;
+    font-weight: bold;
+}
+
+.buttonsmall {
+	/* Disables default styling */
+    border: none;
+    background: #00B6FF;
+    color: #fff;
+
+    /* You need to set font, font size and cursor for buttons */
+    font-size: 11px;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    cursor: pointer;
+
+    padding: 3px 7px;
+}
+
+.buttonall {
+    border-radius: 5px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    box-shadow:
+        0 0 0 1px #0086ba inset, /* Outer bevel */
+        0 0 0 2px #6cdcea inset, /* Inner bevel */
+        0 30px 20px -18px rgba(255,255,255,0.65) inset, /* Inner gradient */
+        1px 1px 3px rgba(0,0,0,0.2) /* Drop shadow */
+    ;
+
+    -webkit-border-radius: 5px;
+    -webkit-text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    -webkit-box-shadow:
+        0 0 0 1px #0086ba inset, /* Outer bevel */
+        0 0 0 2px #6cdcea inset, /* Inner bevel */
+        0 30px 20px -18px rgba(255,255,255,0.65) inset, /* Inner gradient */
+        1px 1px 3px rgba(0,0,0,0.2) /* Drop shadow */
+    ;
+}
+
+/* Easy Slider */
+
+	#slider ul, #slider li,
+	#slider2 ul, #slider2 li{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	#slider2{margin-top:1em;}
+	#slider li, #slider2 li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+		width:980px;
+		height:50px;
+		overflow:hidden; 
+		}	
+	#prevBtn, #nextBtn,
+	#slider1next, #slider1prev{ 
+		display:block;
+		width:30px;
+		height:77px;
+		position:absolute;
+		left:-30px;
+		top:71px;
+		z-index:1000;
+		}	
+	#nextBtn, #slider1next{ 
+		left:1200px;
+		}														
+	#prevBtn a, #nextBtn a,
+	#slider1next a, #slider1prev a{  
+		display:block;
+		position:relative;
+		width:30px;
+		height:77px;
+		background:url(../images/btn_prev.gif) no-repeat 0 0;	
+		}	
+	#nextBtn a, #slider1next a{ 
+		background:url(../images/btn_next.gif) no-repeat 0 0;	
+		}	
+		
+	/* numeric controls */	
+
+	ol#controls{
+		margin:1em 0;
+		padding:0;
+		height:28px;	
+		}
+	ol#controls li{
+		margin:0 10px 0 0; 
+		padding:0;
+		float:left;
+		list-style:none;
+		height:28px;
+		line-height:28px;
+		}
+	ol#controls li a{
+		float:left;
+		height:28px;
+		line-height:28px;
+		border:1px solid #ccc;
+		background:#DAF3F8;
+		color:#555;
+		padding:0 10px;
+		text-decoration:none;
+		}
+	ol#controls li.current a{
+		background:#5DC9E1;
+		color:#fff;
+		}
+	ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
+	
+/* // Easy Slider */
