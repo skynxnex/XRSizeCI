@@ -27,10 +27,15 @@ class User extends CI_Controller {
 	}
 	
 	public function profile() {
-		$data['content'] = 'profile';
-		$this->load->model('User_model');
-		$data['info'] = $this->User_model->getUserinfo();
-		$this->load->view('template', $data);
+		if(loggedin() ) {
+			$data['content'] = 'profile';
+			$this->load->model('User_model');
+			$data['info'] = $this->User_model->getUserinfo();
+			$this->load->view('template', $data);
+		} else {
+			$data['content'] = 'empty_content';
+			$this->load->view('template', $data);
+		}
 	}
 	
 	public function editProfile() {
@@ -40,6 +45,17 @@ class User extends CI_Controller {
 	private function _doLogin() {
 		$name = stripslashes($this->input->post('uname'));
 		$pass = stripslashes($this->input->post('pass'));
+		
+		// $this->load->helper(array('url'));
+		/*
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules($name, 'användarnamn', 'required');
+		$this->form_validation->set_rules($pass, 'lösenord', 'required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->faillogin();
+		}
+		*/
 		$this->load->model('User_model');
 		$results = $this->User_model->getlogin($name);
 		
@@ -61,8 +77,9 @@ class User extends CI_Controller {
 						setcookie('username', $name, time()+60*60*24*365);
 						setcookie('password', sha1($pass), time()+60*60*24*365);
 						$_SESSION['cookie'] = 1;
-						redirect(base_url().'/dashboard/', 'refresh');
+						redirect(base_url().'dashboard/', 'refresh');
 					}
+					redirect(base_url().'dashboard/', 'refresh');
 				}
 			}
 		}
@@ -81,7 +98,12 @@ class User extends CI_Controller {
 		redirect(base_url().'', 'refresh');
 	}
 	
-	
+	private function faillogin() {
+		echo 'blaha!';
+		$this->load->view('login_fail');
+		// $data['content'] = 'login_fail';
+		// $this->load->view('template', $data);
+	}
 }
 
 

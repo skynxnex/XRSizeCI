@@ -3,11 +3,7 @@
 			<div id="eventblogg">
 				<ul>
 					<?php 
-						// foreach($peppblog as $entry) {	
-							// $name = $this->q->getName($entry['user_id']);
-							// $returnvalue .= '<li><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></li>';
-							// $returnvalue .= '<hr width="95%" size="3"> ';
-						// }
+						echo $this->peppblogg->generate_peppblog();
 					?>
 				</ul>
 			</div>

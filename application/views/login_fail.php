@@ -1,11 +1,9 @@
 <div id="leftmenu">
 			<div id="login">
 				<?php
-				if(isset($_SESSION['user']) && $_SESSION['user'] == 2) {
-					echo '<p class="red">Falaktigt användarnamn eller lösenord</p>';
-				}
+					echo validation_errors();
 				?>
-				<form id="loginform" action="<?php echo base_url(); ?>user/login" method="post">
+				<form id="loginform" action="" method="post">
 					<div class="box">
 						<label for="uname">Användarnamn:</label>
 						<input id="uname" class="required" type="text" name="uname" />

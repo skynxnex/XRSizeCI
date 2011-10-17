@@ -19,7 +19,7 @@ class Main extends CI_Controller {
 	 */
 	public function index() {
 		$this->load->view('top');
-		if(isset($_SESSION['loggedin'])) {
+		if(loggedin()) {
 			$this->load->view('loggedin');
 		} else {
 			$this->load->view('login');

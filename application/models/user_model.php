@@ -8,13 +8,20 @@
 		    $this->load->database();
 		}
 		
-		function getlogin($name) {
+		function getlogin($name = null) {
 			$query = $this->db->get_where('user', array('user_name' => $name));
 			return $query->result_array();
 		}
 		
 		function getUserInfo() {
 			$query = $this->db->get_where('user', array('id' => $_SESSION['id']));
+			return $query->row();
+		}
+		
+		function getUserGroupId() {
+			$this->db->select('group_id');
+			$this->db->where('id', $_SESSION['id']);
+			$query = $this->db->get('user');
 			return $query->row();
 		}
 	}
