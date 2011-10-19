@@ -21,8 +21,7 @@ class User extends CI_Controller {
 		}elseif( $this->input->post('logout') ) {
 			$this->dologout();
 		}else  {
-			$data['content'] = 'empty_content';
-			$this->load->view('template', $data);
+			redirect(base_url().'news/', 'refresh');
 		}
 	}
 	
@@ -33,8 +32,7 @@ class User extends CI_Controller {
 			$data['info'] = $this->User_model->getUserinfo();
 			$this->load->view('template', $data);
 		} else {
-			$data['content'] = 'empty_content';
-			$this->load->view('template', $data);
+			redirect(base_url().'news/', 'refresh');
 		}
 	}
 	
@@ -77,9 +75,9 @@ class User extends CI_Controller {
 						setcookie('username', $name, time()+60*60*24*365);
 						setcookie('password', sha1($pass), time()+60*60*24*365);
 						$_SESSION['cookie'] = 1;
-						redirect(base_url().'dashboard/', 'refresh');
+						redirect(base_url().'event/listing', 'refresh');
 					}
-					redirect(base_url().'dashboard/', 'refresh');
+					redirect(base_url().'event/listing/', 'refresh');
 				}
 			}
 		}

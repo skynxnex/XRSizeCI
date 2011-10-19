@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('peppblogg');
+$autoload['libraries'] = array('peppblogg', 'pagination');
 
 
 /*

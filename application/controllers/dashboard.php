@@ -12,15 +12,9 @@ class Dashboard extends CI_Controller {
 			$data['events'] = $this->events_model->get_last_events();
 			$data['content'] = 'events';
 			$this->load->view('template', $data);
+		} else {
+			redirect(base_url().'news/', 'refresh');
 		}
-	}
-
-	private function splitDate($date) {
-		$atoms = explode('-',$date);
-		$year = $atoms[0];
-		$month = str_replace('0', '', $atoms[1]);
-		$day = $atoms[2];
-		return array('year' => $year, 'month' => $month, 'day' => $day);
 	}
 }
 

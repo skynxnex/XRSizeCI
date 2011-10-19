@@ -1,8 +1,8 @@
 <div id="topmenu" class="corners">
 			<div id="topmenuitems">
 				<ul>
-					<li><a href="'.WEB_ROOT.'">Hem</a></li>
-					<li><a href="'.WEB_ROOT.'?action=about">Om</a></li>
+					<li><a href="<?php echo base_url(); ?>news">Hem</a></li>
+					<li><a href="<?php echo base_url(); ?>about">Om</a></li>
 				</ul>
 			</div>
 			<div id="slogan">

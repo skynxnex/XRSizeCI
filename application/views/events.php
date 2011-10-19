@@ -1,5 +1,6 @@
 <?php
-$list = '<div id="content" class="corners"><h2>Senaste träningarna!</h2>';
+$list = '<div id="content" class="corners"><h2>Senaste träningarna!</h2>'.$pages;
+
 foreach($events as $event) {
 	$splitdate = splitDate($event['date']);
 	$list .= '
@@ -18,6 +19,6 @@ foreach($events as $event) {
 	$list .= '</div>
 				<br /><hr style="float:left;" width="100%" size="3" /><br />';
 }
-$list .= '</div>';
+$list .= $pages.'</div>';
 
 echo $list;

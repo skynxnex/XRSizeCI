@@ -1,0 +1,35 @@
+Projektplanering XRSize.me
+
+Klar!
+1. Kunna logga in ( med cookie) klar!
+2. Se 5 senaste träningstillfällen när man loggar in. Klar!
+3. Se senaste nyheterna innan inloggning. Klar!
+9. Se peppbloggen för gruppen man är deltagare i. Klar!
+5. Lägga till träningstyp
+4. Lägga till träningstillfälle, spara ner rätt vecka.
+
+Pågående
+8. Kunna skriva i peppbloggen.
+
+
+
+klar v 42
+6. Se egen statistik såsom antal poäng per vecka
+7. Se andras statistik i gruppen
+10. Ändra i sin profil, byta lösenord
+
+klar v 43
+13. Stjärnligan, den som fått mest poäng hittills med max 180p/v
+11. Lista träningsformer, skriva kommentarer och rejta
+
+12. Allmänn statistik om träningsformer, tex vilken som är populärast etc
+14. Lägga till träningsställen på en googlemap
+
+
+15. Skicka meddelanden till varandra
+	- Skriva meddelande
+		- Välja användare att skriva till
+		- Fält för meddelande
+	- Se nya meddelande
+		- Länk till antal nya meddelanden, skall levereras som return
+		

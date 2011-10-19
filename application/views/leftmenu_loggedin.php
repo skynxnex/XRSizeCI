@@ -8,7 +8,7 @@
 			<div id="ul" class="menu coloredmenu corners">
 				<ul>
 					<li><img src="<?php echo base_url(); ?>images/eleganticons/images/Person-black.png" alt="Profil" /><a href="<?php echo base_url(); ?>user/profile">Min profil</a></li>
-					<li><img src="<?php echo base_url(); ?>images/eleganticons/images/Heart.png" alt="Träningar" /><a href="<?php echo base_url(); ?>event/events">Mina träningar</a></li>
+					<li><img src="<?php echo base_url(); ?>images/eleganticons/images/Heart.png" alt="Träningar" /><a href="<?php echo base_url(); ?>event/listing">Mina träningar</a></li>
 					<li><img src="<?php echo base_url(); ?>images/eleganticons/images/Heart-add.png" alt="Lägga till träningar" /><a href="<?php echo base_url(); ?>event/add">Lägga till träning</a></li>
 					<li><img src="<?php echo base_url(); ?>images/eleganticons/images/Person.png" alt="Statistik" /><a href="<?php echo base_url(); ?>stats/stats">Egen statistik</a></li>
 					<li><img src="<?php echo base_url(); ?>images/eleganticons/images/Person-group.png" alt="Grupp statistik" /><a href="<?php echo base_url(); ?>stats/group">Vänners Statistik</a></li>

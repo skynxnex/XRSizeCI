@@ -54,9 +54,10 @@ p {
 </style>
 </head>
 <body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+	<div>
+		<img src="<?php echo base_url(); ?>images/404.jpg" alt="404" />
+		
+
 	</div>
 </body>
 </html>
