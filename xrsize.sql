@@ -39,7 +39,11 @@ INSERT INTO `blogg` (`id`, `user_id`, `text`, `date`) VALUES
 (18,	8,	'vilken sida titta jag har hittat hit =)\r\n',	'2011-08-16 15:50:32'),
 (19,	1,	'Tack!',	'2011-08-24 19:20:17'),
 (20,	8,	'okej saknar lite mer olika tränings stillar tex workaut ',	'2011-08-25 07:21:32'),
-(21,	1,	'Skriv ner alla träningstypder du saknar och maila mig.',	'2011-08-25 10:29:34');
+(21,	1,	'Skriv ner alla träningstypder du saknar och maila mig.',	'2011-08-25 10:29:34'),
+(22,	1,	'test',	'2011-10-20 13:44:30'),
+(23,	1,	'dett är ett test',	'2011-10-20 13:45:02'),
+(24,	1,	'mohhaha',	'2011-10-20 13:51:58'),
+(25,	1,	'bzzzoing',	'2011-10-20 13:52:07');
 
 DROP TABLE IF EXISTS `event`;
 CREATE TABLE `event` (
@@ -49,33 +53,43 @@ CREATE TABLE `event` (
   `time` int(10) unsigned NOT NULL,
   `eventtype_id` int(11) NOT NULL,
   `comment` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `week` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `event` (`id`, `user_id`, `date`, `time`, `eventtype_id`, `comment`) VALUES
-(1,	1,	'2011-07-19',	30,	1,	'Testträning'),
-(2,	1,	'2011-07-20',	30,	1,	''),
-(3,	1,	'2011-07-21',	30,	1,	'Sprang som en gnu!'),
-(4,	1,	'2011-07-18',	30,	1,	'tjoho'),
-(5,	1,	'2011-07-12',	30,	2,	''),
-(6,	1,	'2011-07-18',	30,	1,	''),
-(7,	1,	'2011-07-19',	60,	3,	'Dance baby dance!'),
-(8,	1,	'2011-07-13',	75,	3,	'Danced my ass off!'),
-(11,	2,	'2011-07-22',	45,	1,	'Vincent väckte mig 06.45....\r\n'),
-(12,	6,	'2011-07-20',	30,	3,	''),
-(13,	6,	'2011-07-21',	45,	1,	''),
-(14,	6,	'2011-07-22',	30,	1,	''),
-(15,	4,	'2011-07-19',	60,	1,	'Rask promenad, '),
-(16,	4,	'2011-07-20',	60,	1,	'Cross-trainer'),
-(17,	4,	'2011-07-18',	90,	1,	'Situps i 90 minuter, '),
-(18,	1,	'2011-07-23',	45,	4,	'Oj vad jag cyklade!'),
-(19,	5,	'2011-08-09',	45,	1,	'Intervall. 5,5 km.'),
-(20,	8,	'2011-08-10',	45,	1,	''),
-(21,	8,	'2011-08-16',	30,	1,	''),
-(22,	8,	'2011-08-24',	30,	3,	'men det var biggest looser '),
-(23,	1,	'2011-09-23',	30,	1,	''),
-(24,	1,	'2011-09-23',	30,	12,	'');
+INSERT INTO `event` (`id`, `user_id`, `date`, `time`, `eventtype_id`, `comment`, `week`) VALUES
+(1,	1,	'2011-07-19',	30,	1,	'Testträning',	0),
+(2,	1,	'2011-07-20',	30,	1,	'',	0),
+(3,	1,	'2011-07-21',	30,	1,	'Sprang som en gnu!',	0),
+(4,	1,	'2011-07-18',	30,	1,	'tjoho',	0),
+(5,	1,	'2011-07-12',	30,	2,	'',	0),
+(6,	1,	'2011-07-18',	30,	1,	'',	0),
+(7,	1,	'2011-07-19',	60,	3,	'Dance baby dance!',	0),
+(8,	1,	'2011-07-13',	75,	3,	'Danced my ass off!',	0),
+(11,	2,	'2011-07-22',	45,	1,	'Vincent väckte mig 06.45....\r\n',	0),
+(12,	6,	'2011-07-20',	30,	3,	'',	0),
+(13,	6,	'2011-07-21',	45,	1,	'',	0),
+(14,	6,	'2011-07-22',	30,	1,	'',	0),
+(15,	4,	'2011-07-19',	60,	1,	'Rask promenad, ',	0),
+(16,	4,	'2011-07-20',	60,	1,	'Cross-trainer',	0),
+(17,	4,	'2011-07-18',	90,	1,	'Situps i 90 minuter, ',	0),
+(18,	1,	'2011-07-23',	45,	4,	'Oj vad jag cyklade!',	0),
+(19,	5,	'2011-08-09',	45,	1,	'Intervall. 5,5 km.',	0),
+(20,	8,	'2011-08-10',	45,	1,	'',	0),
+(21,	8,	'2011-08-16',	30,	1,	'',	0),
+(22,	8,	'2011-08-24',	30,	3,	'men det var biggest looser ',	0),
+(23,	1,	'2011-09-23',	30,	1,	'',	0),
+(24,	1,	'2011-09-23',	30,	12,	'',	0),
+(25,	3,	'2011-10-17',	45,	3,	NULL,	0),
+(26,	1,	'2011-10-13',	30,	1,	'',	20),
+(27,	1,	'2011-10-13',	30,	13,	'',	20),
+(28,	0,	'2011-10-13',	75,	7,	'',	0),
+(29,	5,	'2011-10-28',	90,	1,	'',	0),
+(30,	1,	'2011-10-15',	30,	1,	'',	0),
+(31,	1,	'2011-10-29',	30,	1,	'',	43),
+(32,	1,	'2011-10-21',	30,	1,	'',	42),
+(33,	1,	'2011-10-08',	60,	1,	'',	40);
 
 DROP TABLE IF EXISTS `eventtype`;
 CREATE TABLE `eventtype` (
@@ -97,7 +111,11 @@ INSERT INTO `eventtype` (`id`, `name`, `description`, `parent`) VALUES
 (9,	'Foo',	NULL,	NULL),
 (10,	'Foo',	NULL,	NULL),
 (11,	'Foo',	NULL,	NULL),
-(12,	'Test',	NULL,	NULL);
+(12,	'Test',	NULL,	NULL),
+(13,	'lajdflajdflj',	NULL,	NULL),
+(14,	'test',	NULL,	NULL),
+(15,	'test',	NULL,	NULL),
+(16,	'Core',	NULL,	NULL);
 
 DROP TABLE IF EXISTS `group`;
 CREATE TABLE `group` (
@@ -163,6 +181,10 @@ INSERT INTO `user` (`id`, `user_name`, `name`, `pass`, `email`, `group_id`, `pro
 (5,	'carina',	'Carina Lillbäck-Larsson',	'6367c48dd193d56ea7b0baad25b19455e529f5ee',	'',	1,	'none.png',	NULL),
 (6,	'toivo',	'Toivo Alm',	'3e34f7c6401c63b9f26b6707578a75001f01d6b3',	'toivo@almar.se',	1,	'none.png',	NULL),
 (7,	'majvor',	'Majvor Alm',	'3e34f7c6401c63b9f26b6707578a75001f01d6b3',	'',	1,	'none.png',	NULL),
-(8,	'tina',	'Tina Laketa',	'51066b8c2c8ead5ea8d35a4903572fa6d3d3b4e0',	'tina@laketa.com',	1,	'none.png',	NULL);
+(8,	'tina',	'Tina Laketa',	'51066b8c2c8ead5ea8d35a4903572fa6d3d3b4e0',	'tina@laketa.com',	1,	'none.png',	NULL),
+(10,	'grupp2test',	'Testperson för grupp 2',	'inget',	'mdmdmdm',	2,	NULL,	NULL);
 
--- 2011-10-13 11:24:48
+DROP VIEW IF EXISTS `weekpoints`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `weekpoints` AS select week(`event`.`date`,3) AS `week`,if((sum(`event`.`time`) >= 180),180,sum(`event`.`time`)) AS `points`,`user`.`id` AS `id`,`user`.`name` AS `name` from (`user` join `event`) where (`user`.`id` = `event`.`user_id`) group by `user`.`id`,week(`event`.`date`,3);
+
+-- 2011-10-20 15:53:10
