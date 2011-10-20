@@ -75,9 +75,9 @@ class User extends CI_Controller {
 						setcookie('username', $name, time()+60*60*24*365);
 						setcookie('password', sha1($pass), time()+60*60*24*365);
 						$_SESSION['cookie'] = 1;
-						redirect(base_url().'event/listing', 'refresh');
+						redirect(base_url().'event/listlast', 'refresh');
 					}
-					redirect(base_url().'event/listing/', 'refresh');
+					redirect(base_url().'event/listlast/', 'refresh');
 				}
 			}
 		}

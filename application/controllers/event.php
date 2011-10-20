@@ -41,6 +41,16 @@ class Event extends CI_Controller {
 		
 	}
 	
+	public function listlast() {
+		if(loggedin() ) {
+			$this->load->model('Events_model');
+			$data['events'] = $this->Events_model->get_last_events();
+			$data['content'] = 'events';
+			$this->load->view('template', $data);
+		} else {
+			redirect(base_url().'news/', 'refresh');
+		}
+	}
 	public function listing() {
 		if(loggedin() ) {
 			$ppage = 5;
@@ -64,6 +74,10 @@ class Event extends CI_Controller {
 		} else {
 			redirect(base_url().'news/', 'refresh');
 		}
+	}
+	
+	public function week() {
+		
 	}
 	
 }

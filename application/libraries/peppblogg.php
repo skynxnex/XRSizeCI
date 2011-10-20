@@ -3,6 +3,7 @@
 class Peppblogg {
 	
 	public function generate_peppblog() {
+		$_SESSION['url'] = current_url();
 		$CI =& get_instance();
 		$blog = '';
 		

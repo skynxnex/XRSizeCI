@@ -18,4 +18,13 @@
 			$result = $query->result_array();
 			return $result;
 		}
+		
+		function save() {
+			$date = date('Y-m-d H:i:s', time());
+			$data = array(	'text' => $this->input->post('text'),
+							'user_id' => $_SESSION['id'],
+							'date' => $date
+						);
+			$this->db->insert('blogg', $data);	
+		}
 	}

@@ -7,14 +7,14 @@ Klar!
 9. Se peppbloggen för gruppen man är deltagare i. Klar!
 5. Lägga till träningstyp
 4. Lägga till träningstillfälle, spara ner rätt vecka.
+8. Kunna skriva i peppbloggen.
 
 Pågående
-8. Kunna skriva i peppbloggen.
+6. Se egen statistik såsom antal poäng per vecka
 
 
 
 klar v 42
-6. Se egen statistik såsom antal poäng per vecka
 7. Se andras statistik i gruppen
 10. Ändra i sin profil, byta lösenord
 

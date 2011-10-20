@@ -1,5 +1,5 @@
 <?php
-$list = '<div id="content" class="corners"><h2>Senaste träningarna!</h2>'.$pages;
+$list = '<div id="content" class="corners"><h2>Senaste träningarna!</h2>'; if(isset($pages)) { echo $pages; }
 
 foreach($events as $event) {
 	$splitdate = splitDate($event['date']);
@@ -19,6 +19,6 @@ foreach($events as $event) {
 	$list .= '</div>
 				<br /><hr style="float:left;" width="100%" size="3" /><br />';
 }
-$list .= $pages.'</div>';
-
 echo $list;
+if(isset($pages)) { echo $pages; }
+echo '</div>';

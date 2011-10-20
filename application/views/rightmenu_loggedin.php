@@ -8,7 +8,7 @@
 				</ul>
 			</div>
 			<div id="addblogg">
-				<form action="" method="post">
+				<form action="<?php echo base_url(); ?>peppblog/save" method="post">
 					<fieldset>
 						<label for="text">Skriv i bloggen:</label>
 						<textarea rows="2" cols="1" name="text" id="blogginput" class="elasticinput"></textarea>
