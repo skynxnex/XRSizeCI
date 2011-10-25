@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	class User_model extends CI_Model {
 		
@@ -23,5 +23,11 @@
 			$this->db->where('id', $_SESSION['id']);
 			$query = $this->db->get('user');
 			return $query->row();
+		}
+		function getGroupUsers($group_id){
+			$this->db->select('id, user_name');
+			$this->db->where('group_id', $group_id);
+			$query = $this->db->get('user');
+			return $query->result_array();
 		}
 	}

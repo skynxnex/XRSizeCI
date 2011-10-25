@@ -567,3 +567,24 @@ ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{
 	}
 .event .calendar em:before{left:13px;}	
 .event .calendar em:after{right:13px;}
+
+
+
+
+
+
+.message span.read_0{
+	display: block;
+	height: 35px;
+	width: 18px;
+	background: url(../images/message/whiteflag.png) no-repeat 0 0;
+	
+}
+.message span.read_1{
+	display: block;
+	height: 35px;
+	width: 18px;
+	background: url(../images/message/greenflag.png) no-repeat 0 0;
+	
+}
+

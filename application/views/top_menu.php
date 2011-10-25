@@ -7,6 +7,7 @@
 					}
 					?>
 					<li><a href="<?php echo base_url(); ?>about">Om</a></li>
+					<li><a href="<?php echo base_url(); ?>message">Meddelanden</a></li>
 				</ul>
 			</div>
 			<div id="slogan">
