@@ -6,7 +6,6 @@
 				<p>
 					<label for="topicker">Till:</label>
 					<select id="topicker" name="to_user_id">
-						<option value="4">michael</option>
 						<?php						
 						foreach($persons as $person){
 							echo '<option value="' . $person['id'] . '">' . $person['user_name'] . '</option>';
