@@ -10,8 +10,8 @@ class Peppblog extends CI_Controller {
 		$this->load->model('peppblog_model');
 		$this->peppblog_model->save();
 		
-		$url = $_SESSION['url'];
-		redirect($url);			
+		
+		redirect("/news");			
 	}
 	
 }

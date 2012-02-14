@@ -9,11 +9,11 @@
 		}
 		
 		function get_news() {
-			$query = $this->db->query('	SELECT info.*, user.name, infotype.picture
+			$query = $this->db->query('	SELECT info.*, user.user_name, infotype.picture
 										FROM info, user, infotype
 										WHERE info.user_id = user.id
 										AND info.infotype_id = infotype.id
-										ORDER BY date DESC 
+										ORDER BY info.date DESC 
 										LIMIT 5
 										');
 								

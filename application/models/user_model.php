@@ -14,13 +14,13 @@
 		}
 		
 		function getUserInfo() {
-			$query = $this->db->get_where('user', array('id' => $_SESSION['id']));
+			$query = $this->db->get_where('user', array('id' => $this->session->userdata('id')));
 			return $query->row();
 		}
 		
 		function getUserGroupId() {
 			$this->db->select('group_id');
-			$this->db->where('id', $_SESSION['id']);
+			$this->db->where('id', $this->session->userdata('id'));
 			$query = $this->db->get('user');
 			return $query->row();
 		}

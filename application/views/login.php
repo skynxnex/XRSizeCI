@@ -14,7 +14,7 @@
 				Kom ihåg mig: <input type="checkbox" name="rememberme" value="1">
 			</div>
 			<div class="box">
-				<input class="button" name="login" type="submit" value="Logga in" />
+				<input class="btn-primary" name="login" type="submit" value="Logga in dårå" />
 			</div>
 		</form>
 	</div>

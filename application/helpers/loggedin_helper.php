@@ -2,7 +2,7 @@
 
 if ( ! function_exists('heading')) {
 	function loggedin() {
-		if(isset($_SESSION['user']) && $_SESSION['user'] == 1) {
+		if($this->session->userdata('user') == 1) {
 			return true;
 		}
 		return false;

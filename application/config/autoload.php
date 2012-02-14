@@ -27,6 +27,8 @@
 |
 */
 
+$autoload['sparks'] = array('example-spark/1.0.0');
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Packges
@@ -52,7 +54,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('peppblogg', 'pagination');
+$autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console');
 
 
 /*
@@ -80,7 +82,7 @@ $autoload['helper'] = array('url', 'xrshelper');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('console');
 
 
 /*

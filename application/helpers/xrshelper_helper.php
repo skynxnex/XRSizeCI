@@ -3,7 +3,8 @@
 if ( ! function_exists('heading')) {
 
 	function loggedin() {
-		if(isset($_SESSION['user']) && $_SESSION['user'] == 1) {
+		$CI =& get_instance();
+		if($CI->session->userdata('user') == 1) {
 			return true;
 		}
 		return false;
@@ -45,5 +46,13 @@ if ( ! function_exists('heading')) {
 	
 	function get_last_inserted_id() {
 		return $this->db->insert_id();
+	}
+
+	function check_active_nav($uri1, $uri2) {
+		$CI =& get_instance();
+		if($uri1 == $CI->uri->segment(1) && $uri2 == $CI->uri->segment(2)) {
+			return true;
+		}
+		return false;
 	}
 }

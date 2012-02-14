@@ -1,0 +1,552 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dir",
+				"dirArray"
+			],
+			[
+				"drag",
+				"dragdiv"
+			],
+			[
+				"drop",
+				"droppable"
+			],
+			[
+				"add",
+				"addSortable"
+			],
+			[
+				"num",
+				"numberOfDragtiles"
+			],
+			[
+				"nu",
+				"numberOfDragtiles"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"or",
+				"originalParent"
+			],
+			[
+				"reset",
+				"resetRevert"
+			],
+			[
+				"dra",
+				"draggable"
+			],
+			[
+				"rese",
+				"resetRevert"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"acc",
+				"acceptMethod"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"sc",
+				"screenX"
+			],
+			[
+				"scre",
+				"screenY"
+			],
+			[
+				"back",
+				"background	background-color: name"
+			],
+			[
+				"da",
+				"databaseOptions"
+			],
+			[
+				"i",
+				"incomplete"
+			],
+			[
+				"I",
+				"INTO"
+			],
+			[
+				"ex",
+				"executeSql"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"v",
+				"version"
+			],
+			[
+				"ver",
+				"vertical-align"
+			],
+			[
+				"return",
+				"returnvalue"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
+				"en",
+				"entryName"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/controllers/main.php",
+			"settings":
+			{
+				"buffer_size": 879,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/template.php",
+			"settings":
+			{
+				"buffer_size": 418,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/event.php",
+			"settings":
+			{
+				"buffer_size": 2572,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/events.php",
+			"settings":
+			{
+				"buffer_size": 1154,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 147.0,
+		"selected_items":
+		[
+		],
+		"width": 440.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/www/XRSizeCI/application/controllers/news.php",
+		"/www/XRSizeCI/application/controllers/main.php",
+		"/www/XRSizeCI/application/models/user_model.php",
+		"/www/XRSizeCI/application/controllers/peppblog.php",
+		"/www/XRSizeCI/application/models/peppblog_model.php",
+		"/www/XRSizeCI/application/views/login.php",
+		"/www/XRSizeCI/application/controllers/event.php",
+		"/www/XRSizeCI/application/views/leftmenu_login.php",
+		"/www/XRSizeCI/application/views/leftmenu_loggedin.php",
+		"/www/XRSizeCI/application/libraries/peppblogg.php",
+		"/www/XRSizeCI/application/controllers/user.php",
+		"/www/XRSizeCI/application/config/autoload.php",
+		"/www/XRSizeCI/application/helpers/loggedin_helper.php",
+		"/www/XRSizeCI/application/helpers/xrshelper_helper.php",
+		"/www/XRSizeCI/application/libraries/console.php",
+		"/www/XRSizeCI/application/views/loggedin.php",
+		"/www/XRSizeCI/application/core/MY_Loader.php",
+		"/www/XRSizeCI/application/views/news.php",
+		"/www/XRSizeCI/application/models/news_model.php",
+		"/www/XRSizeCI/application/views/top.php",
+		"/www/XRSizeCI/application/views/event.php",
+		"/www/XRSizeCI/application/views/empty_content.php",
+		"/www/XRSizeCI/application/controllers/dashboard.php",
+		"/www/XRSizeCI/application/config/routes.php",
+		"/www/XRSizeCI/application/controllers/welcome.php",
+		"/www/XRSizeCI/application/views/login_fail.php",
+		"/www/XRSizeCI/application/models/index.html",
+		"/www/XRSizeCI/application/config/config.php",
+		"/www/XRSizeCI/system/core/Config.php",
+		"/www/XRSizeCI/application/config/database.php",
+		"/www/LCC/js/drag.js",
+		"/www/LCC/test.html",
+		"/www/index.php",
+		"/www/LCC/js/min.js",
+		"/www/LCC/js/game.js",
+		"/www/LCC/js/touchhandler.js",
+		"/www/LCC/js/jquery-ui.touch-punch.js",
+		"/www/articledragger/js/script.js",
+		"/www/LCC/css/style.css",
+		"/www/LCC/index.html",
+		"/www/LCC/js/iscroll",
+		"/www/articledragger/index.html",
+		"/www/XRsize/index.php",
+		"/www/XRsize/includes/LeftMenu.php",
+		"/www/LCC/src/lib/jquery-1.7.js",
+		"/www/articledragger/js/touchhandler.js",
+		"/www/articledragger/css/style.css",
+		"/www/articledragger/js/jquery-1.7.js",
+		"/www/articledragger/js/jquery-ui.js",
+		"/www/articledragger/js/bootstrap.js",
+		"/www/articledragger/css/ui-lightness/jquery-ui-1.8.17.custom.css",
+		"/www/articledragger/css/scaffolds.css",
+		"/www/articledragger/style.css",
+		"/www/carddragndrop.js",
+		"/www/rss/js/jquery.js",
+		"/www/touchtest/index.html",
+		"/www/touchtest/min.js",
+		"/www/javascript/Testprylar/index.php",
+		"/Users/pontusalm/Documents/rss.xml",
+		"/Users/pontusalm/Documents/BSmMLh_b.part",
+		"/www/almar.se/index.html",
+		"/www/XRsize/includes/Footer.php",
+		"/www/XRsize/css/dark.css",
+		"/www/XRsize/includes/News.php",
+		"/www/XRsize/includes/Content.php",
+		"/www/XRsize/includes/Manager.php",
+		"/www/XRsize/includes/Event.php",
+		"/www/XRsize/includes/RightMenu.php",
+		"/www/XRsize/includes/functions.php",
+		"/www/XRsize/includes/User.php",
+		"/www/XRsize/js/script.js",
+		"/www/XRsize/includes/MysqlDB.php",
+		"/www/XRsize/includes/Top.php",
+		"/www/XRsize/css/chatbubbles.css",
+		"/www/XRsize/includes/bottom.html",
+		"/www/css/chatbubbles.css",
+		"/www/XRsize/config/config.php",
+		"/www/almar.se/style.css",
+		"/www/almar.se/js/script.js",
+		"/www/mobile/events.html",
+		"/www/mobile/start.php",
+		"/www/mobile/login.php",
+		"/www/mobile/css/min.css",
+		"/www/mobile/login.html",
+		"/www/mobile/js/script.js",
+		"/www/mobile/add.html",
+		"/www/mobile/mystats.html",
+		"/www/mobile/index.php",
+		"/www/mobile/js/jquery-mobile-1.0.js",
+		"/www/mobile/indexold.html",
+		"/www/mobile/index.html",
+		"/Users/pontusalm/Downloads/android-sdk-macosx/SDK Readme.txt",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/private/bin/se/kyh/ad10/timeloggers/server/dao/impl/AttendedTimeDAOImpl.class",
+		"/Users/pontusalm/Documents/repo/XRsize/index.php",
+		"/Users/pontusalm/Documents/repo/XRsize/css/dark.css",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/Event.php",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/Query.php",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/PostManager.php",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/functions.php",
+		"/Users/pontusalm/Documents/repo/XRsize/css/style.css",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/Content.php",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/Manager.php",
+		"/Users/pontusalm/Documents/repo/XRsize/includes/top.html",
+		"/Users/pontusalm/Documents/repo/XRsize/.htaccess",
+		"/Users/pontusalm/Library/Application Support/Sublime Text 2/Packages/Default/Global.sublime-settings",
+		"/Users/pontusalm/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/pontusalm/Documents/repo/XRsize/config/config.php",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/hibernate.cfg.xml",
+		"/Users/pontusalm/Downloads/CS5/Crack.OSX/install_osx.txt",
+		"/Users/pontusalm/Documents/glesys_server_login",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/private/bin/se/kyh/ad10/timeloggers/server/engine/PublicInterfaceImpl.class",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/se/kyh/ad10/timeloggers/server/dao/impl/FeeInProjectDAOImpl.java",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/se/kyh/ad10/timeloggers/server/dao/impl/CustomerDAOImpl.java",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/se/kyh/ad10/timeloggers/server/dao/impl/AttendedTimeDAOImpl.java",
+		"/www/NrTwo/api/index.php",
+		"/www/XRSizeRuby/app/controllers/events_controller.rb",
+		"/Users/pontusalm/Documents/repo/theTimeloggers/README",
+		"/www/Tantbrun/head.html",
+		"/www/indexold.html",
+		"/www/css/twitterbootstrap.css",
+		"/Users/pontusalm/Downloads/code/rmitest/src/RmiClient.java",
+		"/Users/pontusalm/Downloads/code/rmitest/src/server.policy",
+		"/Users/pontusalm/Downloads/code/rmitest/src/RmiServer.java",
+		"/Users/pontusalm/Downloads/code/rmitest/src/RmiServerIntf.java",
+		"/www/index.html",
+		"/Applications/MAMP/htdocs/test.php",
+		"/Applications/MAMP/htdocs/index.html"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"hide",
+			"replace",
+			"ul",
+			"content",
+			"event",
+			"move"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/controllers/main.php",
+					"settings":
+					{
+						"buffer_size": 879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								636,
+								636
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "application/views/template.php",
+					"settings":
+					{
+						"buffer_size": 418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "application/controllers/event.php",
+					"settings":
+					{
+						"buffer_size": 2572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "application/views/events.php",
+					"settings":
+					{
+						"buffer_size": 1154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								909,
+								909
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	$('.carousel').carousel();
+
 	$("#slider").easySlider({
 		auto: true,
 		continuous: true,

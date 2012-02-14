@@ -154,6 +154,7 @@ label.error {
 
 .box {
 	padding-top: 10px;
+	min-height: 25px;
 }
 
 #leftmenu, #ul ul {

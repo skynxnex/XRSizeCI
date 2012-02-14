@@ -32,7 +32,7 @@ class User extends CI_Controller {
 			$data['info'] = $this->User_model->getUserinfo();
 			$this->load->view('template', $data);
 		} else {
-			redirect(base_url().'news/', 'refresh');
+			// redirect(base_url().'news/', 'refresh');
 		}
 	}
 	
@@ -63,9 +63,18 @@ class User extends CI_Controller {
 			if($name == $result['user_name']) {
 				$checkpass = $result['pass'];
 				if(sha1($pass) == $checkpass) {
+					$sessiondata = array(
+							"user" 	=> 1,
+							"id"	=> $result['id'],
+							"name"	=> $result['name'],
+							"uname"	=> $result['user_name']
+						);
+					$this->session->set_userdata($sessiondata);	
+					/*
 					$_SESSION['user'] = 1;
 					$_SESSION['id'] = $result['id'];
-					$_SESSION['name'] = $result['name'];
+					$_SESSION['name'] = $result['user_name'];
+					*/
 					if($result['admin'] == 100) {
 						$_SESSION['admin'] = 1;
 					}
@@ -75,7 +84,7 @@ class User extends CI_Controller {
 						setcookie('username', $name, time()+60*60*24*365);
 						setcookie('password', sha1($pass), time()+60*60*24*365);
 						$_SESSION['cookie'] = 1;
-						redirect(base_url().'event/listlast', 'refresh');
+						// redirect(base_url().'event/listlast', 'refresh');
 					}
 					redirect(base_url().'event/listlast/', 'refresh');
 				}
@@ -83,14 +92,14 @@ class User extends CI_Controller {
 		}
 		}
 		if (!$success) {
-			$_SESSION['user'] = 2;
-			redirect(base_url().'', 'refresh');
+			$this->session->set_userdata(array("user" => 2));
+			// redirect(base_url().'', 'refresh');
 		}
 	redirect(base_url().'', 'refresh');
 	}
 	
 	private function dologout() {
-		session_destroy();
+		$this->session->sess_destroy();
 		setcookie('username');
 		setcookie('password');
 		redirect(base_url().'', 'refresh');

@@ -12,5 +12,20 @@ class Stats extends CI_Controller {
 		$data['content'] = 'mystats';
 		$this->load->view('template', $data);
 	}
+
+	public function group() {
+		$data['content'] = 'empty_content';
+		$this->load->view('template', $data);
+	}
+
+	public function allstats() {
+		$data['content'] = 'empty_content';
+		$this->load->view('template', $data);
+	}
+
+	public function stars() {
+		$data['content'] = 'empty_content';
+		$this->load->view('template', $data);
+	}
 	
 }

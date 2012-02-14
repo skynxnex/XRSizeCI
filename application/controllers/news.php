@@ -11,6 +11,7 @@ class News extends CI_Controller {
 		$data['news'] = $this->News_model->get_news();
 		$data['content'] = 'news';
 		$this->load->view('template', $data);
+		$this->console->log('this will show an error in firebug', 'error', FALSE);
 	}
 	
 }

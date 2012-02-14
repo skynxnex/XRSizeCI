@@ -1,18 +1,16 @@
-<div id="content" class="corners">
+<div id="content" class="span6">
 	<?php
-	foreach($news as $item) {
-		$url = base_url().'images/'.$item['picture'];
-		echo '<div class="info">
-			<h3>'.$item['header'].'</h3>
-			
-			<div class="infopic"><img src="'.$url.'" alt="" /></div>
-			<div class="infocontent">
-				<p>'.$item['content'].'</p>
-				<p class="small">Av '.$item['name'].' '.$item['date'].'</p>
+		foreach($news as $item) {
+			$url = base_url().'images/'.$item['picture'];
+			echo '<div class="info">
+				<h3>'.$item['header'].'</h3>
+				<div class="infopic"><img src="'.$url.'" alt="'.$item['picture'].'" /></div>
+				<div class="infocontent">
+					'.$item['content'].'
+					<p class="small">Av '.$item['user_name'].' '.$item['date'].'</p>
+				</div>
 			</div>
-		</div>
-		<div class="infodevider"></div>';
-		
-	} 
+			<div class="infodevider"></div>';
+		} 
 	?>
 </div>

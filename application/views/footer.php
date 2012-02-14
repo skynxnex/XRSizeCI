@@ -1,1 +1,1 @@
-<div id="footer" class="corners"><p>Copyright Pontus & Linda Alm</p></div>
+<div id="footer" class="span12 alert alert-info"><p>Copyright Pontus & Linda Alm</p></div>

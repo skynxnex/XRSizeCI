@@ -9,7 +9,7 @@
 		}
 		
 		public function get_user_stats() {
-			$query = $this->db->get_where('weekpoints', array('id' => $_SESSION['id']));
+			$query = $this->db->get_where('weekpoints', array('id' => $this->session->userdata('id')));
 			$result = $query->result_array();
 			return $result;
 		}

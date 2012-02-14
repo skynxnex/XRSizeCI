@@ -1,24 +1,40 @@
 <?php
-$list = '<div id="content" class="corners"><h2>Senaste träningarna!</h2>'; if(isset($pages)) { echo $pages; }
-
-foreach($events as $event) {
-	$splitdate = splitDate($event['date']);
-	$list .= '
-		<div class="event">
-			<h3>Av '.$event['uname'].'</h3>
-			<p class="calendar">'.$splitdate['day'].'<em>'.monthName($splitdate['month']).'</em></p>
-			<p>Träningstid: '.$event['time'].'min.</p>
-			<p>Träningstyp: '.$event['ename'].'</p>
-			<p>Egen Kommentar: '.$event['comment'].'</p>';
-	if($event['uid'] == $_SESSION['id'] ) {
-		$list .= '<p>
-			<a href="event/edit/'.$event['id'].'"><button class="button buttonsmall" >Ändra</button></a>
-			<a href="event/delete/'.$event['id'].'"><button class="button clickable buttonsmall" >Ta bort</button></a>
-			</p>';
+	$list = '<div id="content" class="span6">';
+	switch ($this->uri->segment(3)) {
+		case 'listlast':
+			$list .= '<h2>Senaste träningarna!</h2>';
+		break;
 	}
-	$list .= '</div>
-				<br /><hr style="float:left;" width="100%" size="3" /><br />';
-}
-echo $list;
-if(isset($pages)) { echo $pages; }
-echo '</div>';
+	if(isset($pages)) { 
+		// $list .= '<div class="pagination"><ul>';
+		$list .= $pages; 
+		// $list .= '</ul></div>';
+	}
+
+	// 			
+	foreach($events as $event) {
+		$splitdate = splitDate($event['date']);
+		$name = '';
+		if(isset($event['name'])) {
+			$name = '<h3>Av '.$event['name'].'</h3>';
+		}
+		
+		$list .= '
+			<div class="event">
+				<p class="calendar">'.$splitdate['day'].'<em>'.monthName($splitdate['month']).'</em></p>'.$name.'
+				<h4>'.$event['time'].'min '.strtolower($event['ename']).'</h4>
+				<p><strong>Kommentar:</strong> '.$event['comment'].'</p>
+				<p><strong>Andras kommentarer:</strong> (Kommer senare)</p>
+				';
+		if($event['user_id'] == $this->session->userdata('id') ) {
+			$list .= '<div class="well">
+				<a href="'.base_url().'event/edit/'.$event['id'].'"><button class="btn" >Ändra</button></a>
+				<a href="'.base_url().'event/delete/'.$event['id'].'"><button class="btn clickable" >Ta bort</button></a>
+				</div>';
+		}
+		$list .= '<div class="infodevider"></div></div>
+					';
+	}
+	echo $list;
+	if(isset($pages)) { echo $pages; }
+	echo '</div>';

@@ -1,11 +1,11 @@
-<div id="content" class="corners">
+<div id="content" class="span6">
 	<div id="addevent">
 		<div id="trainpic"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
 		<form id="adde" action="<?php echo base_url(); ?>event/add" method="post">
 			<h3>Lägg till träningstillfälle</h3>
 			<fieldset>
 				<label for="datepicker">Datum:</label>
-				<p><input id="datepicker" class="dpDate required" type="text" name="date" /></p>
+				<p><input id="datepicker" class="dpDate required" type="text" name="date" <?php if($action == 'edit') { echo 'value="'.$event['date'].'"';} ?> /></p>
 				<p>Antal minuter:
 					<p><select id="time" name="time">
 						<option value="30">30</option>
@@ -14,7 +14,7 @@
 						<option value="75">75</option>
 						<option value="90">90</option>
 					</select></p>
-				</p>';
+				</p>
 				<label for="type">Träningstyp:</label>
 				<p><select id="type" name="eventtype_id">
 				<?php foreach($eventtypes as $eventtype) {
