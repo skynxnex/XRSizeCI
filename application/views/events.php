@@ -15,9 +15,9 @@
 	foreach($events as $event) {
 		$splitdate = splitDate($event['date']);
 		$name = '';
-		if(isset($event['name'])) {
-			$name = '<h3>Av '.$event['name'].'</h3>';
-		}
+		// if(isset($event['name'])) {
+		// 	$name = '<h3>Av '.$event['name'].'</h3>';
+		// }
 		
 		$list .= '
 			<div class="event">

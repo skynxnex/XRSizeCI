@@ -39,12 +39,23 @@ class Event extends CI_Controller {
 	}
 	
 	public function edit() {
-		$data['content'] = 'event';
-		$data['action'] = 'edit';
-		$this->load->model('Events_model');
-		$data['eventtypes'] = $this->Events_model->get_eventtypes();
-		$data['event'] = $this->Events_model->get_event();
-		$this->load->view('template', $data);
+		if(loggedin()) {	
+			$data['content'] = 'event';
+			$data['action'] = 'edit';
+			$this->load->model('Events_model');
+			$data['eventtypes'] = $this->Events_model->get_eventtypes();
+			$event = $this->Events_model->get_event();
+			$data['event'] = $event[0];
+			if($data['event']['user_id'] == $this->session->userdata('id')) {
+				$this->load->view('template', $data);
+			} else {
+				$this->load->view('template', array('content' => 'error', 'error_mess' => "Du har inte behörighet att ändra den!"));
+			}
+		} else {
+			$data['error_mess'] = "Du måste vara inloggad för att kunna ändra.";
+			$data['content'] = "error";
+			$this->load->view('template', $data);
+		}
 	}
 	
 	public function listlast() {
@@ -96,10 +107,16 @@ class Event extends CI_Controller {
 	}
 	
 	public function week() {
-		$this->load->model('events_model');
-		$data['events'] = $this->events_model->get_events_from_week();
-		$data['content'] = 'events';
-		$this->load->view('template', $data);
+		if(loggedin()) {
+			$this->load->model('events_model');
+			$data['events'] = $this->events_model->get_events_from_week();
+			$data['content'] = 'events';
+			$this->load->view('template', $data);
+		} else {
+			$data['error_mess'] = "Du måste vara inloggad för att kunna se den delen.";
+			$data['content'] = "error";
+			$this->load->view('template', $data);
+		}
 	}
 	
 	private function fixweekdb() {

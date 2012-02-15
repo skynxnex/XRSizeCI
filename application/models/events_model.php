@@ -10,7 +10,7 @@
 
 		public function get_event() {
 			$query = $this->db->get_where('event', array('id' => $this->uri->segment(3)));
-			return $query->row();
+			return $query->result_array();
 		}
 		
 		public function get_last_events() {
