@@ -6,6 +6,33 @@ if ( ! function_exists('heading')) {
 		$CI =& get_instance();
 		if($CI->session->userdata('user') == 1) {
 			return true;
+		} elseif($CI->input->cookie('username') != "" && $CI->input->cookie('password') != "") {
+			if(cookie_login()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function cookie_login() {
+		echo "cookie login";
+		$CI =& get_instance();
+		$CI->load->model('User_model');
+		$results = $CI->User_model->getlogin($CI->input->cookie('username'));
+		foreach($results as $result) {
+			if($CI->input->cookie('username') == $result['user_name']) {
+				$checkpass = $result['pass'];
+				if($CI->input->cookie('password') == $checkpass) {
+					$sessiondata = array(
+							"user" 	=> 1,
+							"id"	=> $result['id'],
+							"name"	=> $result['name'],
+							"uname"	=> $result['user_name']
+						);
+					$CI->session->set_userdata($sessiondata);
+					return true;
+				}
+			}
 		}
 		return false;
 	}

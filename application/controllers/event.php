@@ -9,12 +9,45 @@ class Event extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 	}
+
+	public function index() {
+		if(loggedin() ) {
+			$data['content'] = 'event';
+			$data['action'] = 'new';
+			$this->load->model('Events_model');
+			$data['eventtypes'] = $this->Events_model->get_eventtypes();
+			$this->load->view('template', $data);
+		} else {
+			redirect(base_url().'news/', 'refresh');
+		}
+	}
+
+	public function delete() {
+		if(loggedin()){
+			$this->load->model('Events_model');
+			$event = $this->Events_model->get_event();
+			if($event[0]['user_id'] == $this->session->userdata('id')) {
+				$this->Events_model->delete_event($event[0]['id'], 'event');
+				$data['success_mess'] = "Du har nu tagit bort ditt träningstillfälle.";
+				$data['content'] = "success";
+				$this->load->view('template', $data);
+			} else {
+				$data['error_mess'] = "Du har inte behörighet att ta bort den.";
+				$data['content'] = "error";
+				$this->load->view('template', $data);
+			}
+		} else {
+			$data['error_mess'] = "Du måste vara inloggad för att kunna ta bort.";
+			$data['content'] = "error";
+			$this->load->view('template', $data);
+		}
+	}
 	
-	public function add() {
+	public function add_or_update() {
 		if(loggedin() ) {
 			if($this->input->post()) {
 				$this->load->model('Events_model');
-				$_POST['user_id'] = $_SESSION['id'];
+				$_POST['user_id'] = $this->session->userdata('id');
 				$_POST['week'] = $this->Events_model->calculate_week();
 				if($this->input->post('neweventtype') != "") {
 					$result = $this->Events_model->new_eventtype();
@@ -24,8 +57,17 @@ class Event extends CI_Controller {
 				}
 				unset($_POST['neweventtype']);
 				unset($_POST['addevent']);
-				$this->Events_model->save();
-				redirect(base_url().'event/listing', 'refresh');
+				$result = $this->Events_model->save_or_update();
+				if($result) {
+					$data['success_mess'] = "Ditt träningstillfälle är nu skapat/uppdaterad.";
+					$data['content'] = "success";
+					$this->load->view('template', $data);
+				} else {
+					$data['error_mess'] = "Något gick fel när du skulle spara ditt träningstillfälle.";
+				$data['content'] = "error";
+				$this->load->view('template', $data);
+				}
+				//redirect(base_url().'event/listing', 'refresh');
 			} else {
 				$data['content'] = 'event';
 				$data['action'] = 'new';
@@ -39,18 +81,22 @@ class Event extends CI_Controller {
 	}
 	
 	public function edit() {
-		if(loggedin()) {	
-			$data['content'] = 'event';
-			$data['action'] = 'edit';
-			$this->load->model('Events_model');
-			$data['eventtypes'] = $this->Events_model->get_eventtypes();
-			$event = $this->Events_model->get_event();
-			$data['event'] = $event[0];
-			if($data['event']['user_id'] == $this->session->userdata('id')) {
-				$this->load->view('template', $data);
-			} else {
-				$this->load->view('template', array('content' => 'error', 'error_mess' => "Du har inte behörighet att ändra den!"));
-			}
+		if(loggedin()) {
+			if($this->input->post()) {
+				
+			}else {
+				$data['content'] = 'event';
+				$data['action'] = 'edit';
+				$this->load->model('Events_model');
+				$data['eventtypes'] = $this->Events_model->get_eventtypes();
+				$event = $this->Events_model->get_event();
+				$data['event'] = $event[0];
+				if($data['event']['user_id'] == $this->session->userdata('id')) {
+					$this->load->view('template', $data);
+				} else {
+					$this->load->view('template', array('content' => 'error', 'error_mess' => "Du har inte behörighet att ändra den!"));
+				}
+			}	
 		} else {
 			$data['error_mess'] = "Du måste vara inloggad för att kunna ändra.";
 			$data['content'] = "error";

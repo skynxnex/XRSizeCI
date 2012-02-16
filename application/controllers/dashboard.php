@@ -16,6 +16,11 @@ class Dashboard extends CI_Controller {
 			redirect(base_url().'news/', 'refresh');
 		}
 	}
+
+	public function success() {
+		$data['content'] = 'success';
+		$this->load->view('template', $data);
+	}
 }
 
 

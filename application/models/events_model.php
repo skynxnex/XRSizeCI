@@ -50,8 +50,16 @@
 			return $result;
 		}
 		
-		public function save() {			
-			$this->db->insert('event', $this->input->post());
+		public function save_or_update() {
+			$result = "";
+			if($this->input->post('id')) {
+				$this->db->where('id', $this->input->post('id'));
+				unset($_POST['id']);
+				$result = $this->db->update('event', $this->input->post());
+			} else {
+				$result = $this->db->insert('event', $this->input->post());
+			}
+			return $result;
 		}
 		
 		public function new_eventtype() {
@@ -88,8 +96,12 @@
 					$this->db->where('id', $result['id']);
 					$data = array('week' => $this->calculate_week($result['date']));
 					$this->db->update('event', $data);
-						
 				}
 			}
+		}
+
+		public function delete_event($id = null, $table = null) {
+			$this->db->where('id', $id);
+			$this->db->delete($table); 
 		}
 	}

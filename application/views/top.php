@@ -21,4 +21,4 @@
 </head>
 
 <body>
-	<div id="container">
+	<div id="container" class="row show-grid">

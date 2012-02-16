@@ -54,7 +54,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console');
+$autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console', 'form_validation');
 
 
 /*
@@ -66,7 +66,7 @@ $autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'xrshelper');
+$autoload['helper'] = array('url', 'xrshelper', 'cookie');
 
 
 /*

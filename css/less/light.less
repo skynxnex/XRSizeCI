@@ -1,7 +1,56 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+
 @wrapper-width: 1170px;
 @smallbanner-width: 1170px;
 @smallbanner-height: 130px;
 @light-gray: #DCDCDC;
+@loginInputWidth: 245px;
 
 #container {
 	margin-right: auto;
@@ -44,12 +93,9 @@
 }
 
 #leftmenu {
-	margin: 0px;
 	.span2 {
-		width: 220px;
 	}
 	.span3 {
-		margin: 0px;
 	}
 	label.error {
 		color: red;
@@ -61,6 +107,9 @@
 		width: 10%;
 		height: 10%;
 		vertical-align: middle;
+	}
+	#uname, #password {
+		width: @loginInputWidth;
 	}
 }
 
@@ -83,6 +132,9 @@
 }
 
 #content {
+	.alert {
+		margin: 0px;
+	}
 	.infodevider {
 			height: 10px;
 			clear: both;
@@ -112,12 +164,32 @@
 	.event {
 		.well {
 			margin-top: 40px;
+			clear: left;
 		}
 		.infodevider {
 			border-bottom: 1px white solid;
 		}
 		h4 {
 			margin-bottom: 10px;
+		}
+
+		.date {
+			width: 80px;
+			float: left;
+			margin-right: 20px;
+			.year {
+				text-align: center;
+			}
+		}
+
+		.data {
+			width: 470px;
+			float: left;
+			padding-top: 10px;
+		}
+
+		.hidden {
+			visibility: hidden;
 		}
 	}
 	#weekdata {
@@ -133,12 +205,21 @@
 			height: 20%; */
 		}
 	}
+
+	#statspic {
+		width: 200px;
+		height: 80px;
+		margin: 0 auto 10px auto;
+	}
 }
 
 
 #profile {
 	h2 {
 		margin-bottom: 15px;
+	}
+	input {
+		width: 300px;
 	}
 }
 

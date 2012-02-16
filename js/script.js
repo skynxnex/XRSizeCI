@@ -1,25 +1,11 @@
 $(document).ready(function() {
 	
 	$('.carousel').carousel();
-
-	$("#slider").easySlider({
-		auto: true,
-		continuous: true,
-		numeric: true,
-		speed: 1000,
-		pause: 8000
-	});
 	
 	$('.elasticinput').elastic();
-	
-	jQuery.each(jQuery.browser, function(i, val) {
-		if(i == 'webkit') {
-			$('#ul > ul > li > img').css('height', '4%');
-		}
-    });
 
 	$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
-	$("#loginform").validate();
+
 	$('#adde').validate({
 		rules: {
 			datepicker: {
@@ -41,25 +27,5 @@ $(document).ready(function() {
 			wrapper:'<button></button>',
 			separator:'  '
 		}  
-	});
-	
-	$("#newpass").validate({
-		rules: {
-			pwd: {
-				required: true,
-				minlength: 6
-			},
-			pwdval: {
-				equalTo: "#pwd"
-			}
-		}
-	});
-	
-	$("#editprofile").validate({
-		rules: {
-			email: {
-				email: true
-			}
-		}
 	});
 });

@@ -24,4 +24,17 @@
 			$query = $this->db->get('user');
 			return $query->row();
 		}
+
+		function updateUser($data, $id) {
+			$this->db->where('id', $id);
+			$result = $result = $this->db->update('user', $data);
+			return $result;
+		}
+
+		function updatePassword($pass, $id) {
+			$data = array('pass' => sha1($pass));
+			$this->db->where('id', $id);
+			$result = $result = $this->db->update('user', $data);
+			return $result;
+		}
 	}

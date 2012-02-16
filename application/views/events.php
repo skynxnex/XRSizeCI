@@ -21,10 +21,15 @@
 		
 		$list .= '
 			<div class="event">
-				<p class="calendar">'.$splitdate['day'].'<em>'.monthName($splitdate['month']).'</em></p>'.$name.'
-				<h4>'.$event['time'].'min '.strtolower($event['ename']).'</h4>
-				<p><strong>Kommentar:</strong> '.$event['comment'].'</p>
-				<p><strong>Andras kommentarer:</strong> (Kommer senare)</p>
+				<div class="date">
+					<p class="calendar">'.$splitdate['day'].'<em>'.monthName($splitdate['month']).'</em></p>'.$name.'
+					<p class="year"><strong>'.$splitdate['year'].'</strong></p>
+				</div>
+				<div class="data">
+					<h4>'.$event['time'].'min '.strtolower($event['ename']).'</h4>
+					<p><strong>Kommentar:</strong> '.$event['comment'].'</p>
+					<p><strong>Andras kommentarer:</strong> (Kommer senare)</p>
+				</div>
 				';
 		if($event['user_id'] == $this->session->userdata('id') ) {
 			$list .= '<div class="well">

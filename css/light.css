@@ -1,3 +1,101 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol, ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
 #container {
   margin-right: auto;
   margin-left: auto;
@@ -31,15 +129,6 @@
   text-align: center;
   margin: 0px;
 }
-#leftmenu {
-  margin: 0px;
-}
-#leftmenu .span2 {
-  width: 220px;
-}
-#leftmenu .span3 {
-  margin: 0px;
-}
 #leftmenu label.error {
   color: red;
 }
@@ -50,6 +139,9 @@
   width: 10%;
   height: 10%;
   vertical-align: middle;
+}
+#leftmenu #uname, #leftmenu #password {
+  width: 245px;
 }
 #rightmenu h4 {
   margin-bottom: 10px;
@@ -62,6 +154,9 @@
   padding: 10px;
 }
 #rightmenu #addblogg form {
+  margin: 0px;
+}
+#content .alert {
   margin: 0px;
 }
 #content .infodevider {
@@ -90,12 +185,29 @@
 }
 #content .event .well {
   margin-top: 40px;
+  clear: left;
 }
 #content .event .infodevider {
   border-bottom: 1px white solid;
 }
 #content .event h4 {
   margin-bottom: 10px;
+}
+#content .event .date {
+  width: 80px;
+  float: left;
+  margin-right: 20px;
+}
+#content .event .date .year {
+  text-align: center;
+}
+#content .event .data {
+  width: 470px;
+  float: left;
+  padding-top: 10px;
+}
+#content .event .hidden {
+  visibility: hidden;
 }
 #content #weekdata {
   margin-top: 10px;
@@ -111,8 +223,16 @@
 			height: 20%; */
 
 }
+#content #statspic {
+  width: 200px;
+  height: 80px;
+  margin: 0 auto 10px auto;
+}
 #profile h2 {
   margin-bottom: 15px;
+}
+#profile input {
+  width: 300px;
 }
 /* css for calendar in events */
 .event .calendar {

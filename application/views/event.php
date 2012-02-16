@@ -1,11 +1,12 @@
 <div id="content" class="span6">
 	<div id="addevent">
 		<div id="trainpic"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
-		<form id="adde" class="well" action="<?php echo base_url(); ?>event/add" method="post">
+		<form id="adde" class="well" action="<?php echo base_url(); ?>event/add_or_update" method="post">
 			<h3>Lägg till träningstillfälle</h3>
 			<fieldset>
 				<label for="datepicker">Datum:</label>
-				<p><input id="datepicker" class="dpDate required" type="text" name="date" <?php if($action == 'edit') { echo 'value="'.$event['date'].'"';} ?> /></p>
+				<input id="datepicker" class="required" type="text" name="date" <?php if($action == 'edit') { echo 'value="'.$event['date'].'"';} ?> />
+				<input id="id" class="hidden" name="id" type="text" <?php if($action == 'edit') { echo 'value="'.$event['id'].'"'; } ?> />
 				<p>Antal minuter:
 					<p><select id="time" name="time">
 						<option <?php if($action == 'edit') { if($event['time'] == 30) { echo 'selected="selected"'; } } ?> value="30">30</option>

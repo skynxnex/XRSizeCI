@@ -1,4 +1,4 @@
-<div id="topmenu"> 
+<div id="topmenu" class="row"> 
 	<div class="navbar">
 		<div id="topmenuitems" class="navbar-inner">
 			<div class="container">

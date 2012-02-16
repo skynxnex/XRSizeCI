@@ -1,18 +1,21 @@
 <div id="leftmenu" class="span3">
-			<div id="login">
+			<div id="login" class="row">
 				<?php
-				if($this->session->userdata('user') == 2) {
-					echo '<div class="alert alert-error"><p class="red">Falaktigt användarnamn eller lösenord</p></div>';
-				}
+					echo validation_errors();
+					if($this->session->userdata('login') == 'fail') {
+						echo 	'<div class="alert alert-error">
+									<p>Användarnamn eller lösenord felaktiga.</p>
+								</div>';
+					}
 				?>
 				<form id="loginform" class="form-vertical well" action="<?php echo base_url(); ?>user/login" method="post">
 					<div class="box">
 						<label for="uname">Användarnamn:</label>
-						<input id="uname" class="required span2" type="text" name="uname" />
+						<input id="uname" class="required" type="text" name="uname" />
 					</div>
 					<div class="box">
 						<label for="password">Lösenord:</label>
-						<input id="password" type="password" name="pass" class="required span2" />
+						<input id="password" type="password" name="pass" class="required" />
 					</div>
 					<div class="box">
 						<label class="checkbox">
