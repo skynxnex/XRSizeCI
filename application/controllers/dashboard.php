@@ -8,9 +8,7 @@ class Dashboard extends CI_Controller {
 
 	public function index() {
 		if(loggedin() ) {
-			$this->load->model('events_model');
-			$data['events'] = $this->events_model->get_last_events();
-			$data['content'] = 'events';
+			$data['content'] = 'dashboard';
 			$this->load->view('template', $data);
 		} else {
 			redirect(base_url().'news/', 'refresh');

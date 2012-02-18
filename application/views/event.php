@@ -3,6 +3,7 @@
 		<div id="trainpic"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
 		<form id="adde" class="well" action="<?php echo base_url(); ?>event/add_or_update" method="post">
 			<h3>Lägg till träningstillfälle</h3>
+			<?php echo validation_errors(); ?>
 			<fieldset>
 				<label for="datepicker">Datum:</label>
 				<input id="datepicker" class="required" type="text" name="date" <?php if($action == 'edit') { echo 'value="'.$event['date'].'"';} ?> />

@@ -72,7 +72,8 @@ if ( ! function_exists('heading')) {
 	}
 	
 	function get_last_inserted_id() {
-		return $this->db->insert_id();
+		$CI =& get_instance();
+		return $CI->db->insert_id();
 	}
 
 	function check_active_nav($uri1, $uri2) {

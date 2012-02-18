@@ -108,7 +108,7 @@ class Event extends CI_Controller {
 		if(loggedin() ) {
 			$this->load->model('Events_model');
 			$data['events'] = $this->Events_model->get_last_events();
-			$data['content'] = 'events';
+			$data['content'] = 'listlast';
 			$this->load->view('template', $data);
 		} else {
 			redirect(base_url().'news/', 'refresh');
@@ -165,11 +165,22 @@ class Event extends CI_Controller {
 		}
 	}
 	
-	private function fixweekdb() {
+	public function fixweekdb() {
 		$this->load->model('events_model');
 		$this->events_model->fix_week();
 	}
-	
+
+	public function getLastEvent(){
+		$this->load->model('events_model');
+		$event = $this->events_model->getLastEvent();
+		echo json_encode($event);
+	}
+
+	public function miniEvent() {
+		$this->load->model('events_model');
+		$data['event'] = $this->events_model->getLastEvent();
+		$this->load->view('miniEvent', $data);
+	}
 }
 
 

@@ -120,7 +120,7 @@ class User extends CI_Controller {
 			}else {
 				$this->session->set_userdata('login', 'fail');	
 			}
-			redirect(base_url().'/', 'refresh');
+			redirect(base_url().'dashboard', 'refresh');
 		}
 	}
 	
@@ -144,15 +144,22 @@ class User extends CI_Controller {
 					$this->load->view('template', $data);
 				} else {
 					$this->load->model('User_model');
-					$result = $this->User_model->updatePassword($this->input->post('pass2'), $this->session->userdata('id'));
-					if($result){
-						$data['success_mess'] = "Ditt lösenord är nu uppdaterat.";
-					$data['content'] = "success";
-					$this->load->view('template', $data);
-					} else {
-						$data['error_mess'] = "Något gick fel när du skulle byta lösenord.";
-						$data['content'] = "error";
-						$this->load->view('template', $data);
+					$user = $this->User_model->getUserInfo();
+					if($user->pass == sha1($this->input->post('pass1'))){
+						$result = $this->User_model->updatePassword($this->input->post('pass2'), $this->session->userdata('id'));
+						if($result){
+								$data['success_mess'] = "Ditt lösenord är nu uppdaterat.";
+							$data['content'] = "success";
+							$this->load->view('template', $data);
+						} else {
+							$data['error_mess'] = "Något gick fel när du skulle byta lösenord.";
+							$data['content'] = "error";
+							$this->load->view('template', $data);
+						}
+					}else {
+						$data['error_mess'] = "Fel på gamla lösenordet.";
+							$data['content'] = "error";
+							$this->load->view('template', $data);
 					}
 				}
 			}else {

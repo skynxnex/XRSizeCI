@@ -104,4 +104,21 @@
 			$this->db->where('id', $id);
 			$this->db->delete($table); 
 		}
+
+		public function getLastEvent() {
+			$this->db->select('	event.id,
+								event.date,
+								event.time,
+								user.id as uid, 
+								user.name,
+								eventtype.name as ename
+								');
+			$this->db->limit(1);
+			$this->db->order_by("id", "desc");
+			$this->db->join('user', 'user.id = event.user_id');
+			$this->db->join('eventtype', 'eventtype.id = event.eventtype_id');
+			$result = $this->db->get('event');
+			$result = $result->row();
+			return $result;
+		}
 	}

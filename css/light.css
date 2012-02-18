@@ -143,6 +143,9 @@ blockquote, q {
 #leftmenu #uname, #leftmenu #password {
   width: 245px;
 }
+#rightmenu {
+  width: 240px;
+}
 #rightmenu h4 {
   margin-bottom: 10px;
 }
@@ -156,6 +159,12 @@ blockquote, q {
 #rightmenu #addblogg form {
   margin: 0px;
 }
+#rightmenu p {
+  margin: 0px;
+}
+#content #adde h3 {
+  margin-bottom: 10px;
+}
 #content .alert {
   margin: 0px;
 }
@@ -163,6 +172,11 @@ blockquote, q {
   height: 10px;
   clear: both;
   border-bottom: 1px #dcdcdc solid;
+  margin-bottom: 10px;
+}
+#content .divider {
+  height: 5px;
+  clear: both;
   margin-bottom: 10px;
 }
 #content .infopic {
@@ -227,6 +241,9 @@ blockquote, q {
   width: 200px;
   height: 80px;
   margin: 0 auto 10px auto;
+}
+#content #lastevents .span5 {
+  margin: 0px;
 }
 #profile h2 {
   margin-bottom: 15px;
