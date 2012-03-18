@@ -2,7 +2,6 @@
 	<div id="addevent">
 		<form id="adde" class="well" action="<?php echo base_url(); ?>event/add_or_update" method="post">
 			<h3>Lägg till träningstillfälle</h3>
-			<?php echo validation_errors('<div class="alert alert-error">', '</div>'); ?>
 			<fieldset>
 		<div id="trainpic" class="pull-right"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
 				<p>Datum:</p>
