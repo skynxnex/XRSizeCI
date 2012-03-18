@@ -33,7 +33,7 @@
 			}
 
 			$query = $this->db->query('
-				SELECT event.id, event.user_id, event.date, event.time, event.comment, user.name, eventtype.name as ename
+				SELECT event.id, event.user_id, event.year, event.month, event.day, event.time, event.comment, user.name, eventtype.name as ename
 				FROM event, user, eventtype
 				WHERE event.user_id = user.id
 				AND event.eventtype_id = eventtype.id

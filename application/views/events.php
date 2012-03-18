@@ -6,24 +6,16 @@
 		break;
 	}
 	if(isset($pages)) { 
-		// $list .= '<div class="pagination"><ul>';
 		$list .= $pages; 
-		// $list .= '</ul></div>';
 	}
-
-	// 			
-	foreach($events as $event) {
-		$splitdate = splitDate($event['date']);
-		$name = '';
-		// if(isset($event['name'])) {
-		// 	$name = '<h3>Av '.$event['name'].'</h3>';
-		// }
 		
+	foreach($events as $event) {
+		$name = '';		
 		$list .= '
 			<div class="event">
 				<div class="date">
-					<p class="calendar">'.$splitdate['day'].'<em>'.monthName($splitdate['month']).'</em></p>'.$name.'
-					<p class="year"><strong>'.$splitdate['year'].'</strong></p>
+					<p class="calendar">'.$event['day'].'<em>'.monthName($event['month']).'</em></p>'.$name.'
+					<p class="year"><strong>'.$event['year'].'</strong></p>
 				</div>
 				<div class="data">
 					<h4>'.$event['time'].'min '.strtolower($event['ename']).'</h4>

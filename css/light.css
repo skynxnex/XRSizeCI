@@ -190,8 +190,8 @@ body {
   height: 30px;
   font-size: 20px;
 }
-#content #adde h3 {
-  margin-bottom: 10px;
+#content #addevent h3 {
+  width: 300px;
 }
 #content .alert {
   margin: 0px;

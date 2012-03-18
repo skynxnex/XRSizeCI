@@ -1,10 +1,10 @@
 <div id="content" class="span6">
 	<div id="addevent">
-		<div id="trainpic"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
 		<form id="adde" class="well" action="<?php echo base_url(); ?>event/add_or_update" method="post">
 			<h3>Lägg till träningstillfälle</h3>
 			<?php echo validation_errors('<div class="alert alert-error">', '</div>'); ?>
 			<fieldset>
+		<div id="trainpic" class="pull-right"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
 				<p>Datum:</p>
 				<select id="year" class="select" name="year">
 					<?php 
@@ -37,18 +37,19 @@
 
 				</select>
 				<select id="month" class="select" name="month">
-					<option value="1">januari</option>
-					<option value="2">februari</option>
-					<option value="3">mars</option>
-					<option value="4">april</option>
-					<option value="5">maj</option>
-					<option value="6">juni</option>
-					<option value="7">juli</option>
-					<option value="8">augusti</option>
-					<option value="9">september</option>
-					<option value="10">oktober</option>
-					<option value="11">november</option>
-					<option value="12">december</option>
+					<?php if($event['month'] == 1) { echo '<option selected="selected" value="1">januari</option>'; } else { echo '<option value="1">januari</option>'; } 
+					if($event['month'] == 2) { echo '<option selected="selected" value="2">februari</option>'; } else { echo '<option value="2">februari</option>'; }
+					if($event['month'] == 3) { echo '<option selected="selected" value="3">mars</option>'; } else { echo '<option value="3">mars</option>'; }
+					if($event['month'] == 4) { echo '<option selected="selected" value="4">april</option>'; } else { echo '<option value="4">april</option>'; }
+					if($event['month'] == 5) { echo '<option selected="selected" value="5">maj</option>'; } else { echo '<option value="5">maj</option>'; }
+					if($event['month'] == 6) { echo '<option selected="selected" value="6">juni</option>'; } else { echo '<option value="6">juni</option>'; }
+					if($event['month'] == 7) { echo '<option selected="selected" value="7">juli</option>'; } else { echo '<option value="7">juli</option>'; }
+					if($event['month'] == 8) { echo '<option selected="selected" value="8">augusti</option>'; } else { echo '<option value="8">augusti</option>'; }
+					if($event['month'] == 9) { echo '<option selected="selected" value="9">september</option>'; } else { echo '<option value="9">september</option>'; }
+					if($event['month'] == 10) { echo '<option selected="selected" value="10">oktober</option>'; } else { echo '<option value="10">oktober</option>'; }
+					if($event['month'] == 11) { echo '<option selected="selected" value="11">november</option>'; } else { echo '<option value="11">november</option>'; }
+					if($event['month'] == 12) { echo '<option selected="selected" value="12">december</option>'; } else { echo '<option value="12">december</option>'; }
+					?>
 				</select>
 				<select id="day" class="select" name="day">
 					<?php 
