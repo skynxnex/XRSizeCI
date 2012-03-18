@@ -8,28 +8,38 @@ Klar!
 5. Lägga till träningstyp
 4. Lägga till träningstillfälle, spara ner rätt vecka.
 8. Kunna skriva i peppbloggen.
-
-Pågående
+10. Ändra i sin profil, byta lösenord
 6. Se egen statistik såsom antal poäng per vecka
 
+Pågående
+- Göra om datum, dela upp i år, månad, dag, vecka
+- Få feedback på design, vad saknas? vad ska ändras?
+- Mina mål
+	- "progress bar"
+- Skapa användare, captcha bild för säkerhet
+- Se träningar i en kalender, tables med snygg css
+- skapa grupp, bli gruppadmin
+- Gå med i grupp, ansöka till grupp, gruppadmin
+
+- Se andras statistik i gruppen
+- Stjärnligan, den som fått mest poäng hittills med max 180p/v (skippa? göra om?)
+- Lista träningsformer, skriva kommentarer och rejta
+
+- Allmänn statistik om träningsformer, tex vilken som är populärast etc
+- Lägga till träningsställen på en googlemap
 
 
-klar v 42
-7. Se andras statistik i gruppen
-10. Ändra i sin profil, byta lösenord
-
-klar v 43
-13. Stjärnligan, den som fått mest poäng hittills med max 180p/v
-11. Lista träningsformer, skriva kommentarer och rejta
-
-12. Allmänn statistik om träningsformer, tex vilken som är populärast etc
-14. Lägga till träningsställen på en googlemap
-
-
-15. Skicka meddelanden till varandra
+- Skicka meddelanden till varandra
 	- Skriva meddelande
 		- Välja användare att skriva till
 		- Fält för meddelande
 	- Se nya meddelande
 		- Länk till antal nya meddelanden, skall levereras som return
 		
+
+reCaptcha
+public
+	6LeG7c4SAAAAANFursctJ4VGDHVYiOsWcHSXww0g
+
+private
+	6LeG7c4SAAAAAMFk8Qqb_UrQ97ZRUZn1h--RW9EA 

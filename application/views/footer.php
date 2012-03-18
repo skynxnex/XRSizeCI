@@ -1,5 +1,4 @@
-<div class="row">
-	<div id="footer" class="span12 alert alert-info">
+
+	<div id="footer" class="alert alert-info">
 		<p>Copyright Pontus & Linda Alm</p>
 	</div>
-</div>

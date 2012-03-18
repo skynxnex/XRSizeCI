@@ -1,5 +1,6 @@
 <?php
-
+	$this->session->set_userdata(array('url' => current_url()));
+	
 	$this->load->view('top');
 	$this->load->view('banner');
 	$this->load->view('top_menu');

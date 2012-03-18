@@ -87,7 +87,7 @@
 			return $result;
 		}
 		
-		public function fix_week() {
+		private function fix_week() {
 			$query = $this->db->get('event');
 			$results = $query->result_array();
 			// print_r($result);
@@ -97,6 +97,28 @@
 					$data = array('week' => $this->calculate_week($result['date']));
 					$this->db->update('event', $data);
 				}
+			}
+		}
+
+		public function fix_date() {
+			$query = $this->db->get('event');
+			$results = $query->result_array();
+			foreach($results as $event) {
+				$date = $event['date'];
+ 	 			$year = date('Y',strtotime($date));
+ 	 			$month = date('m', strtotime($date));	
+ 	 			$day = date('d', strtotime($date));
+
+				print_r($year.":".$month.":".$day);
+				echo "<br />";
+				echo "<br />";
+
+				$data = array(	'year' 	=> $year,
+								'month'	=> $month,
+								'day'	=> $day
+							);
+				$this->db->where('id', $event['id']);
+				$this->db->update('event', $data);
 			}
 		}
 

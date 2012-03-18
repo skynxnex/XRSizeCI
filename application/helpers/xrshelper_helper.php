@@ -83,4 +83,43 @@ if ( ! function_exists('heading')) {
 		}
 		return false;
 	}
+
+	/**
+ * valid_date
+ *
+ * check if a date is valid
+ *
+ * @access    public
+ * @param    string
+ * @param    string
+ * @return    boolean
+ */
+
+ function valid_date($str, $format = 'yyy/mm/dd')
+ {
+        switch($format)
+        {
+
+            case 'yyyy/mm/dd':
+                if(preg_match("/^(19\d\d|2\d\d\d)[\/|-](0?[1-9]|1[012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/", $str,$match) && checkdate($match[2],$match[3],$match[1]))
+                {
+                    return TRUE;
+                }
+            break;
+            case 'mm/dd/yyyy':
+                if(preg_match("/^(0?[1-9]|1[012])[\/|-](0?[1-9]|[12][0-9]|3[01])[\/|-](19\d\d|2\d\d\d)$/", $str,$match) && checkdate($match[1],$match[2],$match[3]))
+                {
+                    return TRUE;
+                }
+            break;
+            default: // 'dd/mm/yyyy'
+                if(preg_match("/^(0?[1-9]|[12][0-9]|3[01])[\/|-](0?[1-9]|1[012])[\/|-](19\d\d|2\d\d\d)$/", $str,$match) && checkdate($match[2],$match[1],$match[3]))
+                {
+                return TRUE;
+                }
+            break;
+
+        }
+        return FALSE;
+ }
 }

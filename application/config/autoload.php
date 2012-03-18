@@ -66,7 +66,7 @@ $autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console', 
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'xrshelper', 'cookie');
+$autoload['helper'] = array('url', 'xrshelper', 'cookie', 'recaptchalib');
 
 
 /*

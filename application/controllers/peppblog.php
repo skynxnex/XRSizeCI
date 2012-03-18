@@ -11,7 +11,7 @@ class Peppblog extends CI_Controller {
 		$this->peppblog_model->save();
 		
 		
-		redirect("/news");			
+		redirect($this->session->userdata('url'));			
 	}
 	
 }

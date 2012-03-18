@@ -24,6 +24,9 @@ body {
 	line-height: 1;
 	color: black;
 	background: white;
+	.row {
+		margin: 0px;
+	}
 }
 ol, ul {
 	list-style: none;
@@ -51,6 +54,10 @@ blockquote, q {
 @smallbanner-height: 130px;
 @light-gray: #DCDCDC;
 @loginInputWidth: 245px;
+
+body {
+	min-width: 900px;
+}
 
 #container {
 	margin-right: auto;
@@ -80,6 +87,9 @@ blockquote, q {
 }
 
 #topmenu {
+	.search {
+		margin-left: 20px;
+	}
 	width: @wrapper-width;
 
 	.container {
@@ -93,6 +103,9 @@ blockquote, q {
 }
 
 #leftmenu {
+	#navigation {
+		margin-top: 30px;
+	}
 	.span2 {
 	}
 	.span3 {
@@ -114,7 +127,6 @@ blockquote, q {
 }
 
 #rightmenu {
-		width: 240px;
 	h4 {
 		margin-bottom: 10px;
 	}
@@ -138,6 +150,25 @@ blockquote, q {
 }
 
 #content {
+	min-height: 400px;
+	#create_user_content {
+		.box {
+			margin-top: 20px;
+		}
+	}
+	.select {
+		width: 100px;
+	}
+	#buttons {
+		padding: 20px;
+		.btn {
+			padding: 50px;
+			margin: 20px;
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+		}
+	}
 	#adde h3 {
 		margin-bottom: 10px;
 	}
@@ -230,6 +261,10 @@ blockquote, q {
 			margin: 0px;
 		}
 	}
+}
+
+.pagination {
+	text-align: center;
 }
 
 

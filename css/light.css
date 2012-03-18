@@ -75,6 +75,9 @@ body {
   color: black;
   background: white;
 }
+body .row {
+  margin: 0px;
+}
 ol, ul {
   list-style: none;
 }
@@ -95,6 +98,9 @@ q:after {
 }
 blockquote, q {
   quotes: "" "";
+}
+body {
+  min-width: 900px;
 }
 #container {
   margin-right: auto;
@@ -122,12 +128,18 @@ blockquote, q {
 #topmenu {
   width: 1170px;
 }
+#topmenu .search {
+  margin-left: 20px;
+}
 #topmenu .container {
   width: auto;
 }
 #footer {
   text-align: center;
   margin: 0px;
+}
+#leftmenu #navigation {
+  margin-top: 30px;
 }
 #leftmenu label.error {
   color: red;
@@ -142,9 +154,6 @@ blockquote, q {
 }
 #leftmenu #uname, #leftmenu #password {
   width: 245px;
-}
-#rightmenu {
-  width: 240px;
 }
 #rightmenu h4 {
   margin-bottom: 10px;
@@ -161,6 +170,25 @@ blockquote, q {
 }
 #rightmenu p {
   margin: 0px;
+}
+#content {
+  min-height: 400px;
+}
+#content #create_user_content .box {
+  margin-top: 20px;
+}
+#content .select {
+  width: 100px;
+}
+#content #buttons {
+  padding: 20px;
+}
+#content #buttons .btn {
+  padding: 50px;
+  margin: 20px;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
 }
 #content #adde h3 {
   margin-bottom: 10px;
@@ -244,6 +272,9 @@ blockquote, q {
 }
 #content #lastevents .span5 {
   margin: 0px;
+}
+.pagination {
+  text-align: center;
 }
 #profile h2 {
   margin-bottom: 15px;

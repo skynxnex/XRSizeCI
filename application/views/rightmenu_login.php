@@ -1,4 +1,3 @@
 <div id="rightmenu" class="span3">
-			<div id="mail"><h4>Är du intresserad av att få en inloggning?</h4>
-			<p>Maila till <a href="mailto:pontus@xrsize.me">admin</a>.</p></div>
-		</div>
+	<a class="btn pull-right" href="<?php echo base_url(); ?>user/login" >Logga in</a>
+</div>

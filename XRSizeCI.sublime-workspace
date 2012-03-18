@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"_validate",
+				"_validate_data"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"get",
+				"getLastEvent"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"Event",
+				"Events_model"
+			],
+			[
+				"ba",
+				"background	background: color image repeat attachment position"
+			],
+			[
+				"info",
+				"infodevider"
+			],
+			[
+				"sma",
+				"smallbanner-height"
+			],
+			[
+				"small",
+				"smallbanner-width"
+			],
+			[
 				"dir",
 				"dirArray"
 			],
@@ -116,18 +156,53 @@
 	"buffers":
 	[
 		{
-			"file": "application/controllers/main.php",
+			"file": "application/config/config.php",
 			"settings":
 			{
-				"buffer_size": 879,
+				"buffer_size": 12813,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/views/template.php",
+			"file": "css/less/light.less",
 			"settings":
 			{
-				"buffer_size": 418,
+				"buffer_size": 5514,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/helpers/xrshelper_helper.php",
+			"settings":
+			{
+				"buffer_size": 3126,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/script.js",
+			"settings":
+			{
+				"buffer_size": 1902,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/config/autoload.php",
+			"settings":
+			{
+				"buffer_size": 3245,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Projektplanering XRSize.me\n\nKlar!\n1. Kunna logga in ( med cookie) klar!\n2. Se 5 senaste träningstillfällen när man loggar in. Klar!\n3. Se senaste nyheterna innan inloggning. Klar!\n9. Se peppbloggen för gruppen man är deltagare i. Klar!\n5. Lägga till träningstyp\n4. Lägga till träningstillfälle, spara ner rätt vecka.\n8. Kunna skriva i peppbloggen.\n10. Ändra i sin profil, byta lösenord\n6. Se egen statistik såsom antal poäng per vecka\n\nPågående\n\n\n\nklar v 42\n7. Se andras statistik i gruppen\n\nklar v 43\n13. Stjärnligan, den som fått mest poäng hittills med max 180p/v\n11. Lista träningsformer, skriva kommentarer och rejta\n\n12. Allmänn statistik om träningsformer, tex vilken som är populärast etc\n14. Lägga till träningsställen på en googlemap\n\n\n15. Skicka meddelanden till varandra\n	- Skriva meddelande\n		- Välja användare att skriva till\n		- Fält för meddelande\n	- Se nya meddelande\n		- Länk till antal nya meddelanden, skall levereras som return\n		\n",
+			"file": "TODO.txt",
+			"file_size": 986,
+			"file_write_time": 1319115442000000,
+			"settings":
+			{
+				"buffer_size": 952,
 				"line_ending": "Unix"
 			}
 		},
@@ -135,15 +210,109 @@
 			"file": "application/controllers/event.php",
 			"settings":
 			{
-				"buffer_size": 2572,
+				"buffer_size": 6235,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/views/events.php",
+			"contents": "<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');\n\nclass Android extends CI_Controller {\n	\n	function __construct() {\n		parent::__construct();\n	}	\n\n	public function index() {\n		if($this->input->post()) {\n			\n		}\n		$this->load->model('events_model');\n		$result = $this->events_model->getLastEvent();\n		echo json_encode($result);\n	}\n	\n}\n\n\n\n/* End of file user.php */\n/* Location: ./application/controllers/android.php */\n\n",
+			"file": "application/controllers/android.php",
+			"file_size": 405,
+			"file_write_time": 1329667169000000,
 			"settings":
 			{
-				"buffer_size": 1154,
+				"buffer_size": 444,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/dashboard.php",
+			"settings":
+			{
+				"buffer_size": 553,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/user.php",
+			"settings":
+			{
+				"buffer_size": 5965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/dashboard.php",
+			"settings":
+			{
+				"buffer_size": 204,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/leftmenu_loggedin.php",
+			"settings":
+			{
+				"buffer_size": 3216,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/listlast.php",
+			"settings":
+			{
+				"buffer_size": 504,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/event.php",
+			"settings":
+			{
+				"buffer_size": 2204,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\n	class Events_model extends CI_Model {\n		\n		function __construct() {\n		    // Call the Model constructor\n		    parent::__construct();\n		    $this->load->database();\n		}\n\n		public function get_event() {\n			$query = $this->db->get_where('event', array('id' => $this->uri->segment(3)));\n			return $query->result_array();\n		}\n		\n		public function get_last_events() {\n			$query = $this->db->query('\n				SELECT event.id, event.user_id, event.date, event.time, event.comment, user.name, eventtype.name as ename\n				FROM event, user, eventtype\n				WHERE event.user_id = user.id\n				AND event.eventtype_id = eventtype.id\n				AND user.group_id = 1\n				ORDER BY event.date DESC\n				LIMIT 5');\n			$result = $query->result_array();\n			return $result;\n		}\n		\n		public function get_events_by_user($id, $start = null, $limit_val = null) {\n			$limit = '';\n			if($start != null || $limit_val != null) {\n				$limit = 'LIMIT '.$start.', '.$limit_val;\n			}\n\n			$query = $this->db->query('\n				SELECT event.id, event.user_id, event.date, event.time, event.comment, user.name, eventtype.name as ename\n				FROM event, user, eventtype\n				WHERE event.user_id = user.id\n				AND event.eventtype_id = eventtype.id\n				AND user.id = '.$id.'\n				ORDER BY event.date DESC '.$limit\n									);\n			$result = $query->result_array();\n			return $result;\n		}\n		\n		public function get_eventtypes() {\n			$query = $this->db->get('eventtype');\n			$result = $query->result_array();\n			return $result;\n		}\n		\n		public function save_or_update() {\n			$result = \"\";\n			if($this->input->post('id')) {\n				$this->db->where('id', $this->input->post('id'));\n				unset($_POST['id']);\n				$result = $this->db->update('event', $this->input->post());\n			} else {\n				$result = $this->db->insert('event', $this->input->post());\n			}\n			return $result;\n		}\n		\n		public function new_eventtype() {\n			$data = array('name' => $this->input->post('neweventtype'));\n			$result = $this->db->insert('eventtype', $data);\n		}\n		\n		public function calculate_week($date = null) {\n			$week = '';\n			if($date == null) {\n				$week = date('W', strtotime($this->input->post('date')));				\n			} else {\n				$week = date('W', strtotime($date));\n			}\n			return $week;\n		}\n		\n		public function get_events_from_week() {\n			$this->db->select('event.*, eventtype.name as ename');\n			$this->db->where('user_id', $this->uri->segment(3));\n			$this->db->where('week', $this->uri->segment(4));\n			$this->db->join('eventtype', 'event.eventtype_id = eventtype.id');\n			$query = $this->db->get('event');\n			$result = $query->result_array();\n			return $result;\n		}\n		\n		public function fix_week() {\n			$query = $this->db->get('event');\n			$results = $query->result_array();\n			// print_r($result);\n			foreach($results as $result) {\n				if($result['week'] == 0) {\n					$this->db->where('id', $result['id']);\n					$data = array('week' => $this->calculate_week($result['date']));\n					$this->db->update('event', $data);\n				}\n			}\n		}\n\n		public function delete_event($id = null, $table = null) {\n			$this->db->where('id', $id);\n			$this->db->delete($table); \n		}\n\n		public function getLastEvent() {\n			$this->db->select('	event.id,\n								event.date,\n								event.time,\n								user.id as uid, \n								user.name,\n								eventtype.name as ename\n								');\n			$this->db->limit(1);\n			$this->db->order_by(\"id\", \"desc\");\n			$this->db->join('user', 'user.id = event.user_id');\n			$this->db->join('eventtype', 'eventtype.id = event.eventtype_id');\n			$result = $this->db->get('event');\n			$result = $result->row();\n			return $result;\n		}\n	}\n",
+			"file": "application/models/events_model.php",
+			"file_size": 3554,
+			"file_write_time": 1329650174000000,
+			"settings":
+			{
+				"buffer_size": 3554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/models/news_model.php",
+			"settings":
+			{
+				"buffer_size": 621,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/models/peppblog_model.php",
+			"settings":
+			{
+				"buffer_size": 826,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/models/stats_model.php",
+			"settings":
+			{
+				"buffer_size": 373,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/models/user_model.php",
+			"settings":
+			{
+				"buffer_size": 1007,
 				"line_ending": "Unix"
 			}
 		}
@@ -172,32 +341,73 @@
 	},
 	"file_history":
 	[
+		"/Users/pontusalm/Downloads/jdom/README.txt",
+		"/Users/pontusalm/Downloads/android-sdk-macosx/SDK Readme.txt",
+		"/www/XRSizeCI/application/views/leftmenu_login.php",
+		"/Users/pontusalm/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/www/XRSizeCI/XRSizeCI.sublime-project",
+		"/Users/pontusalm/Downloads/sensorsimulator-2.0-rc1/bin/readme_SensorRecordFromDevice.txt",
+		"/www/XRSizeCI/application/views/top_menu.php",
+		"/www/XRSizeCI/application/views/banner.php",
+		"/private/var/folders/6k/jy_wjfb9767fwxk60kxcm6000000gn/T/fz3temp-1/config.inc.php",
+		"/www/XRSizeCI/application/controllers/android.html",
+		"/www/XRSizeCI/application/views/leftmenu_loggedin.php",
+		"/www/XRSizeCI/application/views/empty_content.php",
+		"/www/XRSizeCI/application/views/event.php",
+		"/www/XRSizeCI/application/views/top.php",
+		"/www/XRSizeCI/application/views/profile.php",
+		"/www/XRSizeCI/application/views/events.php",
+		"/www/XRSizeCI/application/views/rightmenu_loggedin.php",
+		"/www/XRSizeCI/application/views/miniEvent.php",
+		"/www/XRSizeCI/.htaccess",
+		"/www/XRSizeCI/application/config/routes.php",
+		"/www/XRSizeCI/css/jquery.ui.datepicker.css",
+		"/www/XRSizeCI/application/controllers/user.php",
+		"/www/XRSizeCI/index.php",
+		"/www/XRSizeCI/application/views/AJAX_event.php",
+		"/www/XRSizeCI/application/controllers/stats.php",
+		"/www/XRSizeCI/application/controllers/eventtype.php",
+		"/www/XRSizeCI/application/controllers/listlast.php",
+		"/www/XRSizeCI/application/controllers/about.php",
+		"/www/XRSizeCI/application/views/template.php",
+		"/www/XRsize/includes/User.php",
+		"/www/XRSizeCI/application/views/edit_profile.php",
 		"/www/XRSizeCI/application/controllers/news.php",
+		"/www/XRSizeCI/application/views/pass_update.php",
+		"/www/XRSizeCI/css/bootstrap.css",
+		"/www/XRSizeCI/application/views/debug.php",
+		"/www/XRSizeCI/application/views/error.php",
+		"/www/XRSizeCI/application/views/success.php",
+		"/www/XRSizeCI/application/views/footer.php",
+		"/www/XRSizeCI/application/views/news.php",
+		"/www/XRSizeCI/application/views/mystats.php",
+		"/www/XRSizeCI/application/views/rightmenu_login.php",
+		"/www/XRSizeCI/application/views/row_end.php",
+		"/www/XRSizeCI/application/views/login_fail.php",
 		"/www/XRSizeCI/application/controllers/main.php",
-		"/www/XRSizeCI/application/models/user_model.php",
+		"/www/XRSizeCI/css/dark.css",
+		"/www/XRSizeCI/application/controllers/debug.php",
+		"/www/XRSizeCI/css/light.css",
+		"/www/XRSizeCI/application/views/bottom.php",
+		"/www/XRSizeCI/application/libraries/peppblogg.php",
 		"/www/XRSizeCI/application/controllers/peppblog.php",
+		"/www/XRSizeCI/application/controllers/event.php",
+		"/www/XRSizeCI/application/controllers/dashboard.php",
+		"/www/XRSizeCI/js/carousel.js",
+		"/www/XRSizeCI/js/jquery.js",
+		"/www/XRSizeCI/css/bootstrap-responsive.css",
+		"/www/XRSizeCI/application/views/loggedin_tpl.php",
+		"/www/XRSizeCI/application/controllers/welcome.php",
+		"/www/XRSizeCI/application/models/user_model.php",
 		"/www/XRSizeCI/application/models/peppblog_model.php",
 		"/www/XRSizeCI/application/views/login.php",
-		"/www/XRSizeCI/application/controllers/event.php",
-		"/www/XRSizeCI/application/views/leftmenu_login.php",
-		"/www/XRSizeCI/application/views/leftmenu_loggedin.php",
-		"/www/XRSizeCI/application/libraries/peppblogg.php",
-		"/www/XRSizeCI/application/controllers/user.php",
 		"/www/XRSizeCI/application/config/autoload.php",
 		"/www/XRSizeCI/application/helpers/loggedin_helper.php",
 		"/www/XRSizeCI/application/helpers/xrshelper_helper.php",
 		"/www/XRSizeCI/application/libraries/console.php",
 		"/www/XRSizeCI/application/views/loggedin.php",
 		"/www/XRSizeCI/application/core/MY_Loader.php",
-		"/www/XRSizeCI/application/views/news.php",
 		"/www/XRSizeCI/application/models/news_model.php",
-		"/www/XRSizeCI/application/views/top.php",
-		"/www/XRSizeCI/application/views/event.php",
-		"/www/XRSizeCI/application/views/empty_content.php",
-		"/www/XRSizeCI/application/controllers/dashboard.php",
-		"/www/XRSizeCI/application/config/routes.php",
-		"/www/XRSizeCI/application/controllers/welcome.php",
-		"/www/XRSizeCI/application/views/login_fail.php",
 		"/www/XRSizeCI/application/models/index.html",
 		"/www/XRSizeCI/application/config/config.php",
 		"/www/XRSizeCI/system/core/Config.php",
@@ -241,7 +451,6 @@
 		"/www/XRsize/includes/Event.php",
 		"/www/XRsize/includes/RightMenu.php",
 		"/www/XRsize/includes/functions.php",
-		"/www/XRsize/includes/User.php",
 		"/www/XRsize/js/script.js",
 		"/www/XRsize/includes/MysqlDB.php",
 		"/www/XRsize/includes/Top.php",
@@ -259,46 +468,7 @@
 		"/www/mobile/js/script.js",
 		"/www/mobile/add.html",
 		"/www/mobile/mystats.html",
-		"/www/mobile/index.php",
-		"/www/mobile/js/jquery-mobile-1.0.js",
-		"/www/mobile/indexold.html",
-		"/www/mobile/index.html",
-		"/Users/pontusalm/Downloads/android-sdk-macosx/SDK Readme.txt",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/private/bin/se/kyh/ad10/timeloggers/server/dao/impl/AttendedTimeDAOImpl.class",
-		"/Users/pontusalm/Documents/repo/XRsize/index.php",
-		"/Users/pontusalm/Documents/repo/XRsize/css/dark.css",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/Event.php",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/Query.php",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/PostManager.php",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/functions.php",
-		"/Users/pontusalm/Documents/repo/XRsize/css/style.css",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/Content.php",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/Manager.php",
-		"/Users/pontusalm/Documents/repo/XRsize/includes/top.html",
-		"/Users/pontusalm/Documents/repo/XRsize/.htaccess",
-		"/Users/pontusalm/Library/Application Support/Sublime Text 2/Packages/Default/Global.sublime-settings",
-		"/Users/pontusalm/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/pontusalm/Documents/repo/XRsize/config/config.php",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/hibernate.cfg.xml",
-		"/Users/pontusalm/Downloads/CS5/Crack.OSX/install_osx.txt",
-		"/Users/pontusalm/Documents/glesys_server_login",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/private/bin/se/kyh/ad10/timeloggers/server/engine/PublicInterfaceImpl.class",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/se/kyh/ad10/timeloggers/server/dao/impl/FeeInProjectDAOImpl.java",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/se/kyh/ad10/timeloggers/server/dao/impl/CustomerDAOImpl.java",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/private/src/se/kyh/ad10/timeloggers/server/dao/impl/AttendedTimeDAOImpl.java",
-		"/www/NrTwo/api/index.php",
-		"/www/XRSizeRuby/app/controllers/events_controller.rb",
-		"/Users/pontusalm/Documents/repo/theTimeloggers/README",
-		"/www/Tantbrun/head.html",
-		"/www/indexold.html",
-		"/www/css/twitterbootstrap.css",
-		"/Users/pontusalm/Downloads/code/rmitest/src/RmiClient.java",
-		"/Users/pontusalm/Downloads/code/rmitest/src/server.policy",
-		"/Users/pontusalm/Downloads/code/rmitest/src/RmiServer.java",
-		"/Users/pontusalm/Downloads/code/rmitest/src/RmiServerIntf.java",
-		"/www/index.html",
-		"/Applications/MAMP/htdocs/test.php",
-		"/Applications/MAMP/htdocs/index.html"
+		"/www/mobile/index.php"
 	],
 	"find":
 	{
@@ -316,6 +486,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"disabled",
+			"show-grid",
+			"statspic",
+			"small",
+			"img",
+			"ul",
+			"btn",
 			"hide",
 			"replace",
 			"ul",
@@ -339,62 +516,162 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/controllers/main.php",
+					"file": "application/config/config.php",
 					"settings":
 					{
-						"buffer_size": 879,
+						"buffer_size": 12813,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								636,
-								636
+								504,
+								504
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 1,
-					"file": "application/views/template.php",
+					"file": "css/less/light.less",
 					"settings":
 					{
-						"buffer_size": 418,
+						"buffer_size": 5514,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								239,
-								239
+								1085,
+								1085
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 663.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/helpers/xrshelper_helper.php",
+					"settings":
+					{
+						"buffer_size": 3126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2181,
+								2181
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 705.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/script.js",
+					"settings":
+					{
+						"buffer_size": 1902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1389,
+								1389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/config/autoload.php",
+					"settings":
+					{
+						"buffer_size": 3245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2017,
+								2017
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1438.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "TODO.txt",
+					"settings":
+					{
+						"buffer_size": 952,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -409,19 +686,47 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 6,
 					"file": "application/controllers/event.php",
 					"settings":
 					{
-						"buffer_size": 2572,
+						"buffer_size": 6235,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4898,
+								4898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2112.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "application/controllers/android.php",
+					"settings":
+					{
+						"buffer_size": 444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								171,
+								171
 							]
 						],
 						"settings":
@@ -434,27 +739,310 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
-					"file": "application/views/events.php",
+					"buffer": 8,
+					"file": "application/controllers/dashboard.php",
 					"settings":
 					{
-						"buffer_size": 1154,
+						"buffer_size": 553,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								909,
-								909
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "application/controllers/user.php",
+					"settings":
+					{
+						"buffer_size": 5965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								542,
+								542
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 181.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 10,
+					"file": "application/views/dashboard.php",
+					"settings":
+					{
+						"buffer_size": 204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "application/views/leftmenu_loggedin.php",
+					"settings":
+					{
+						"buffer_size": 3216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3100,
+								3100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "application/views/listlast.php",
+					"settings":
+					{
+						"buffer_size": 504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								461,
+								461
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "application/views/event.php",
+					"settings":
+					{
+						"buffer_size": 2204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 230.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 14,
+					"file": "application/models/events_model.php",
+					"settings":
+					{
+						"buffer_size": 3554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "application/models/news_model.php",
+					"settings":
+					{
+						"buffer_size": 621,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								360,
+								360
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "application/models/peppblog_model.php",
+					"settings":
+					{
+						"buffer_size": 826,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								716,
+								746
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "application/models/stats_model.php",
+					"settings":
+					{
+						"buffer_size": 373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								346
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "application/models/user_model.php",
+					"settings":
+					{
+						"buffer_size": 1007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								440,
+								440
 							]
 						],
 						"settings":
@@ -540,6 +1128,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/www/rss/rss.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

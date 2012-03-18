@@ -1,4 +1,4 @@
-<div class="row">
+
 	<div id="rightmenu" class="span3">
 		<div id="peppheader"><h3>Peppbloggen</h3><h6>Senaste 10</h6></div>
 		<div id="eventblogg">
@@ -20,4 +20,3 @@
 			</form>
 		</div> <!-- end addblogg  -->
 	</div> <!-- end rightmenu -->
-</div>

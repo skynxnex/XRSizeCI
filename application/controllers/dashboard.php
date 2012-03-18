@@ -23,6 +23,6 @@ class Dashboard extends CI_Controller {
 
 
 
-/* End of file user.php */
+/* End of file dashboard.php */
 /* Location: ./application/controllers/dashboard.php */
 

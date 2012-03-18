@@ -1,4 +1,4 @@
-<div id="banner" class="row">
+<div id="banner" class="">
 	<div class="carousel">
 		<div class="carousel-inner">	
 			<div id="banner1" class="item small-banner active"><h1>Kom igång mot dina mål idag!</h1></div>
