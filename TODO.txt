@@ -22,7 +22,7 @@ Klar!
 - skapa grupp, bli gruppadmin
 - Gå med i grupp, ansöka till grupp, gruppadmin
 - Bjuda in kompisar till grupp
-
+- Koppla profilbild till gravatar - hjälpsida om hur man uppdaterar sin profilbild
 - Se andras statistik i gruppen
 - Stjärnligan, den som fått mest poäng hittills med max 180p/v (skippa? göra om?)
 - Lista träningsformer, skriva kommentarer och rejta
@@ -38,7 +38,14 @@ Klar!
 	- Se nya meddelande
 		- Länk till antal nya meddelanden, skall levereras som return
 		
+Telefonapp
+------------------------------------------------------
+Logga in
+Lägga till träningar
+Se senaste träningar, ev kommentarer etc
+Slå igång för inspelning av träningspass (tex cykling eller löpning). Geolocation
 
+------------------------------------------------------
 reCaptcha
 public
 	6LeG7c4SAAAAANFursctJ4VGDHVYiOsWcHSXww0g

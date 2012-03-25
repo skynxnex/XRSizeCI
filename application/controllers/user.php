@@ -45,6 +45,7 @@ class User extends CI_Controller {
 
 	public function create() {
 		if($this->input->post()) {
+			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
 			$this->form_validation->set_message('required', '<div class="alert alert-error">%s kan inte vara tomt!</div>');
 			$this->form_validation->set_message('matches', '<div class="alert alert-error">Lösenorden är inte likadana</div>');
 			$this->form_validation->set_message('valid_email', '<div class="alert alert-error">Inte en korrekt epost adress</div>');
@@ -213,6 +214,10 @@ class User extends CI_Controller {
 			$data['content'] = "error";
 			$this->load->view('template', $data);
 		}
+	}
+
+	private function username_check($uname) {
+		// Check in db if there is a username already
 	}
 }
 

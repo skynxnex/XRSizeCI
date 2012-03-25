@@ -1,6 +1,7 @@
 
 	<div id="rightmenu" class="span3">
 		<div id="peppheader"><h3>Peppbloggen</h3><h6>Senaste 10</h6></div>
+		<?php echo validation_errors(); ?>
 		<div id="eventblogg">
 			<table class="table table-striped">
 				<tbody>
