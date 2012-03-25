@@ -46,7 +46,11 @@ class User extends CI_Controller {
 	public function create() {
 		if($this->input->post()) {
 			$this->form_validation->set_message('required', '<div class="alert alert-error">%s kan inte vara tomt!</div>');
-			$this->form_validation->set_message('matches', '<div class="alert alert-error">Lösenord är inte likadana</div>');
+			$this->form_validation->set_message('matches', '<div class="alert alert-error">Lösenorden är inte likadana</div>');
+			$this->form_validation->set_message('valid_email', '<div class="alert alert-error">Inte en korrekt epost adress</div>');
+			$this->form_validation->set_rules('name', 'Namn', 'required');
+			$this->form_validation->set_rules('uname', 'Användarnamn', 'required');
+			$this->form_validation->set_rules('email', 'Epost', 'required|valid_email');
 			$this->form_validation->set_rules('pass', 'Lösenord', 'required');
 			$this->form_validation->set_rules('pass2', 'Lösenord igen','required|matches[pass]');
 			if ($this->form_validation->run() == FALSE) {
