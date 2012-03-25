@@ -1,7 +1,7 @@
 <div id="content" class="span6">
 	<div id="profile">
 		<h2>Din profil</h2>
-		<div class="profilepic"><img src="<?php echo base_url(); ?>images/<?php echo $info->profile_img ?>" alt="" /></div>
+		<div class="profilepic"><img src="http://www.gravatar.com/avatar/<?php echo $gravatar_info; ?>?d=mm" alt="" /></div>
 		<div class="infocontent">
 			<p>
 				<span class="span2">Användarnamn: </span> 
@@ -18,6 +18,7 @@
 				<a href="<?php echo base_url(); ?>user/edit"><button class="btn">Ändra i profil</button></a>
 				<a href="<?php echo base_url(); ?>user/pass"><button class="btn" >Byta lösenord</button></a>
 			</div>
+		<p>För att ändra profilbild så görs det på <a href="http://www.gravatar.com">www.gravatar.com</a></p>
 		</div>
 	</div>
 </div>

@@ -37,6 +37,7 @@ class User extends CI_Controller {
 			$data['content'] = 'profile';
 			$this->load->model('User_model');
 			$data['info'] = $this->User_model->getUserinfo();
+			$data['gravatar_info'] = md5( strtolower( trim($data['info']->email)));
 			$this->load->view('template', $data);
 		} else {
 			redirect(base_url().'news/', 'refresh');

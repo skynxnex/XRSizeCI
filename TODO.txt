@@ -38,12 +38,20 @@ Klar!
 	- Se nya meddelande
 		- Länk till antal nya meddelanden, skall levereras som return
 		
+Refactor
+------------------------------------------------------
+Alla querys till CI native
+Datum körs från år/månad/dag i db
+		
 Telefonapp
 ------------------------------------------------------
 Logga in
 Lägga till träningar
 Se senaste träningar, ev kommentarer etc
 Slå igång för inspelning av träningspass (tex cykling eller löpning). Geolocation
+
+
+
 
 ------------------------------------------------------
 reCaptcha
