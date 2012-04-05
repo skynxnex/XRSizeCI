@@ -53,7 +53,6 @@ class Event extends CI_Controller {
 
 					$this->load->model('Events_model');
 					$_POST['user_id'] = $this->session->userdata('id');
-					$_POST['week'] = $this->Events_model->calculate_week();
 					if($this->input->post('neweventtype') != "") {
 						$result = $this->Events_model->new_eventtype();
 						if($result) {

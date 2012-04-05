@@ -52,6 +52,9 @@
 		
 		public function save_or_update() {
 			$result = "";
+			$date = date(DATE_ATOM, mktime(0,0,0,$this->input->post('month'),$this->input->post('day'), $this->input->post('year')));
+			$_POST['date'] = $date;
+			$_POST['week'] = $this->calculate_week();
 			if($this->input->post('id')) {
 				$this->db->where('id', $this->input->post('id'));
 				unset($_POST['id']);
@@ -70,7 +73,7 @@
 		public function calculate_week($date = null) {
 			$week = '';
 			if($date == null) {
-				$week = date('W', strtotime($this->input->post('date')));				
+				$week = date('W', strtotime($this->input->post('date')));
 			} else {
 				$week = date('W', strtotime($date));
 			}

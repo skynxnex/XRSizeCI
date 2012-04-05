@@ -45,25 +45,39 @@ class User extends CI_Controller {
 	}
 
 	public function create() {
+		$publickey = "6LeG7c4SAAAAANFursctJ4VGDHVYiOsWcHSXww0g";
 		if($this->input->post()) {
-			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
-			$this->form_validation->set_message('required', '<div class="alert alert-error">%s kan inte vara tomt!</div>');
-			$this->form_validation->set_message('matches', '<div class="alert alert-error">Lösenorden är inte likadana</div>');
-			$this->form_validation->set_message('valid_email', '<div class="alert alert-error">Inte en korrekt epost adress</div>');
-			$this->form_validation->set_rules('name', 'Namn', 'required');
-			$this->form_validation->set_rules('uname', 'Användarnamn', 'required');
-			$this->form_validation->set_rules('email', 'Epost', 'required|valid_email');
-			$this->form_validation->set_rules('pass', 'Lösenord', 'required');
-			$this->form_validation->set_rules('pass2', 'Lösenord igen','required|matches[pass]');
-			if ($this->form_validation->run() == FALSE) {
-				$data['content'] = 'create_user';
-				$this->load->view('template', $data);
-			} else {
-				echo "skapa användare har  lyckats, skapa databaskoppling";
-			}
+		    $privatekey = '6LeG7c4SAAAAAMFk8Qqb_UrQ97ZRUZn1h--RW9EA';
+		    $resp = recaptcha_check_answer ($privatekey,
+                $_SERVER["REMOTE_ADDR"],
+                $this->input->post("recaptcha_challenge_field"),
+                $this->input->post("recaptcha_response_field"));
+
+            if ($resp->is_valid) {
+    			$this->form_validation->set_message('required', '<div class="alert alert-error">%s kan inte vara tomt!</div>');
+    			$this->form_validation->set_message('matches', '<div class="alert alert-error">Lösenorden är inte likadana</div>');
+    			$this->form_validation->set_message('valid_email', '<div class="alert alert-error">Inte en korrekt epost adress</div>');
+    			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
+    			$this->form_validation->set_rules('name', 'Namn', 'required');
+    			$this->form_validation->set_rules('uname', 'Användarnamn', 'required');
+    			$this->form_validation->set_rules('email', 'Epost', 'required|valid_email');
+    			$this->form_validation->set_rules('pass', 'Lösenord', 'required');
+    			$this->form_validation->set_rules('pass2', 'Lösenord igen','required|matches[pass]');
+    			if ($this->form_validation->run() == FALSE) {
+    				$data['content'] = 'create_user';
+    				$this->load->view('template', $data);
+    			} else {
+    				echo "skapa användare har  lyckats, skapa databaskoppling";
+    			}
+            } else {
+                $this->my_form_validation->set_error('Captcha', 'Det blev något fel med %s ');
+                $data = array();
+                $data['cap'] = recaptcha_get_html($publickey);
+                $data['content'] = 'create_user';
+                $this->load->view('template', $data);
+            }
 		} else {
 			$data = array();
-			$publickey = "6LeG7c4SAAAAANFursctJ4VGDHVYiOsWcHSXww0g";
 			$data['cap'] = recaptcha_get_html($publickey);
 			$data['content'] = 'create_user';
 			$this->load->view('template', $data);

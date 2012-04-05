@@ -15,7 +15,8 @@ class Peppblogg {
 		
 		foreach($results as $entry) {	
 			$name = $entry['name'];
-			$blog .= '<tr><td><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></td></tr>';
+			$blog .= '<div class="peppbox"><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></div>';
+			// $blog .= '<tr><td><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></td></tr>';
 		}
 		return $blog;
 	}

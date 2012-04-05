@@ -10,9 +10,9 @@ Klar!
 8. Kunna skriva i peppbloggen.
 10. Ändra i sin profil, byta lösenord
 6. Se egen statistik såsom antal poäng per vecka
+- Göra om datum, dela upp i år, månad, dag, vecka
 ------------------------------------------------------
 
-- Göra om datum, dela upp i år, månad, dag, vecka
 - Få feedback på design, vad saknas? vad ska ändras?
 - Mina mål
 	- "progress bar"

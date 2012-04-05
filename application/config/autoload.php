@@ -54,7 +54,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console', 'form_validation');
+$autoload['libraries'] = array('peppblogg', 'pagination', 'session', 'console', 'MY_Form_validation', 'Form_validation');
 
 
 /*

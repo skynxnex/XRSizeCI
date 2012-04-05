@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	
 	$('#miniEvent').load('/event/miniEvent');
 	var refreshMini = setInterval(
 	  	function() {
@@ -59,21 +59,6 @@ $(document).ready(function() {
 	
 	$('.elasticinput').elastic();
 
-	$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
-
-	$('#adde').validate({
-		rules: {
-			datepicker: {
-				required: true,
-				date: true,
-				dpDate: true
-			}
-		},
-		messages: {
-			validFormatDatepicker: 'Datumet är ogiltigt'
-		}
-	});
-	
 	$('.clickable').confirm({
 		timeout:3000,
 		dialogShow:'fadeIn',
@@ -82,5 +67,69 @@ $(document).ready(function() {
 			wrapper:'<button></button>',
 			separator:'  '
 		}  
+	});
+	
+	var time = $('#time option:selected').attr('value');
+	$("#time").hide();
+	// var select = $( "#time" );
+	$("#slider").slider({
+		max: 90,
+		min: 30,
+		step: 15,
+		value: $( "#time option:selected").text(),
+		slide: function(event, ui) {
+			time = ui.value;
+		},
+		stop: function(event, ui) {
+			console.log(ui.value);
+			$('#time').find('option:selected').removeAttr('selected');
+			$('#time option[value='+ui.value+']').attr('selected', 'selected');
+		}
+	});
+	
+	$('.ui-slider-handle').hover(
+		function(e) {
+			var values = $(".ui-slider-handle").offset();
+			var width = $(".ui-slider-handle").width();
+			var height = $(".ui-slider-handle").height();
+			var leftVal = values.left + 5; 
+			var topVal = values.top - 40;
+			
+			$('#output_time').html('<span>'+time+'</span>').show().css({left:leftVal,top:topVal});
+		},
+		function() {
+			$('#output_time').hide();
+		}
+	);
+	
+	
+	console.log($('#month option:selected').attr('value'));
+	
+	$('#year').hide();
+	$('#month').hide();
+	$('#day').hide();
+	$.datepicker.regional[ "se" ] ;
+	$('#datepicker').datepicker({
+		dateFormat: "yy-mm-dd",
+		defaultDate: new Date($('#year option:selected').val(), $('#month option:selected').attr('value') -1, $('#day option:selected').val()),
+		autoSize: true,
+		showWeek: true,
+		weekHeader: 'V',
+		showButtonPanel: true,
+		showOtherMonths: true,
+		onSelect: function(text) {
+			var date = text;  
+			var elem = date.split('-');
+			day = elem[2];  
+			$('#day').find('option:selected').removeAttr('selected');
+			$('#day option[value='+day+']').attr('selected', 'selected');
+			month = elem[1];
+			
+			$('#month').find('option:selected').removeAttr('selected');
+			$('#month option[value='+month+']').attr('selected', 'selected');
+			year = elem[0];
+			$('#year').find('option:selected').removeAttr('selected');
+			$('#year option[value='+year+']').attr('selected', 'selected');
+		}
 	});
 });

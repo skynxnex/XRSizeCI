@@ -16,7 +16,7 @@
 					<li class="<?php if(check_active_nav("about", "")) { echo 'active'; } ?>"><a href="<?php echo base_url(); ?>about">Om</a></li>
 				</ul>
 				<form class="navbar-search pull-right search">
-	    			<input type="text" class="search-query" placeholder="Sök i siten här">
+	    			<input type="text" class="search-query disabled" placeholder="Sök (funkar inte än)">
 	    		</form>
 			</div>
 		</div>
