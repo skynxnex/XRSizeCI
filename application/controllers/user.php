@@ -47,19 +47,20 @@ class User extends CI_Controller {
 	public function create() {
 		$publickey = "6LeG7c4SAAAAANFursctJ4VGDHVYiOsWcHSXww0g";
 		if($this->input->post()) {
+			
 		    $privatekey = '6LeG7c4SAAAAAMFk8Qqb_UrQ97ZRUZn1h--RW9EA';
-		    $resp = recaptcha_check_answer ($privatekey,
-                $_SERVER["REMOTE_ADDR"],
-                $this->input->post("recaptcha_challenge_field"),
-                $this->input->post("recaptcha_response_field"));
+		    // $resp = recaptcha_check_answer ($privatekey,
+                // $_SERVER["REMOTE_ADDR"],
+                // $this->input->post("recaptcha_challenge_field"),
+                // $this->input->post("recaptcha_response_field"));
 
-            if ($resp->is_valid) {
+            // if ($resp->is_valid) {
     			$this->form_validation->set_message('required', '<div class="alert alert-error">%s kan inte vara tomt!</div>');
     			$this->form_validation->set_message('matches', '<div class="alert alert-error">Lösenorden är inte likadana</div>');
     			$this->form_validation->set_message('valid_email', '<div class="alert alert-error">Inte en korrekt epost adress</div>');
-    			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
+    			// $this->form_validation->set_rules('uname', 'Username', 'callback_username_check');
+    			$this->form_validation->set_rules('user_name', 'Användarnamn', 'required');
     			$this->form_validation->set_rules('name', 'Namn', 'required');
-    			$this->form_validation->set_rules('uname', 'Användarnamn', 'required');
     			$this->form_validation->set_rules('email', 'Epost', 'required|valid_email');
     			$this->form_validation->set_rules('pass', 'Lösenord', 'required');
     			$this->form_validation->set_rules('pass2', 'Lösenord igen','required|matches[pass]');
@@ -67,18 +68,27 @@ class User extends CI_Controller {
     				$data['content'] = 'create_user';
     				$this->load->view('template', $data);
     			} else {
-    				echo "skapa användare har  lyckats, skapa databaskoppling";
+    				$this->load->model('user_model');
+					$result = $this->user_model->createUser();
+					if($result) {
+						$data['success_mess'] = "Användaren är skapad! Klicka på logga in för att börja använda tjänsterna!";
+						$data['content'] = "success";
+						$this->load->view('template', $data);
+					} else {
+						$data['error_mess'] = "Användarnamnet finns redan!";
+						$data['content'] = "error";
+						$this->load->view('template', $data);
+					}
     			}
-            } else {
-                $this->my_form_validation->set_error('Captcha', 'Det blev något fel med %s ');
-                $data = array();
-                $data['cap'] = recaptcha_get_html($publickey);
-                $data['content'] = 'create_user';
-                $this->load->view('template', $data);
-            }
+            // } else {
+                // // $this->my_form_validation->set_error('Captcha', 'Det blev något fel med %s ');                // $data = array();
+                // $data['cap'] = recaptcha_get_html($publickey);
+                // $data['content'] = 'create_user';
+                // $this->load->view('template', $data);
+            // }
 		} else {
 			$data = array();
-			$data['cap'] = recaptcha_get_html($publickey);
+			// $data['cap'] = recaptcha_get_html($publickey);
 			$data['content'] = 'create_user';
 			$this->load->view('template', $data);
 		}
@@ -231,8 +241,17 @@ class User extends CI_Controller {
 		}
 	}
 
-	private function username_check($uname) {
+	public function username_check() {
 		// Check in db if there is a username already
+		if($this->input->post()) {
+			$this->load->model('user_model');
+			$result = $this->user_model->username_check();
+				if($this->input->is_ajax_request()) {
+					echo json_encode(array("returnvalue" => $result));
+				} else {
+					return $response;
+				}
+		}
 	}
 }
 

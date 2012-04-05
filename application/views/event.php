@@ -1,7 +1,18 @@
+<?php
+	if($action != 'new'){
+		print_r( $event );
+	}
+?>
 <div id="content" class="span6">
 	<div id="addevent">
 		<form id="adde" class="well" action="<?php echo base_url(); ?>event/add_or_update" method="post">
-			<h3>Lägg till träningstillfälle</h3>
+			<?php
+				if($action == 'edit') {
+					echo '<h3>Ändra träningstillfälle</h3>';
+				} else {
+					echo '<h3>Lägg till träningstillfälle</h3>';
+				}
+			?>
 			<fieldset>
 		<div id="trainpic" class="pull-right"><img src="<?php echo base_url(); ?>images/training.png" alt="" /></div>
 				<p>Datum:</p>

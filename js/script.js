@@ -102,9 +102,6 @@ $(document).ready(function() {
 		}
 	);
 	
-	
-	console.log($('#month option:selected').attr('value'));
-	
 	$('#year').hide();
 	$('#month').hide();
 	$('#day').hide();
@@ -112,9 +109,6 @@ $(document).ready(function() {
 	$('#datepicker').datepicker({
 		dateFormat: "yy-mm-dd",
 		defaultDate: new Date($('#year option:selected').val(), $('#month option:selected').attr('value') -1, $('#day option:selected').val()),
-		autoSize: true,
-		showWeek: true,
-		weekHeader: 'V',
 		showButtonPanel: true,
 		showOtherMonths: true,
 		onSelect: function(text) {
@@ -130,6 +124,28 @@ $(document).ready(function() {
 			year = elem[0];
 			$('#year').find('option:selected').removeAttr('selected');
 			$('#year option[value='+year+']').attr('selected', 'selected');
+		}
+	});
+	
+	$('#user_name').keyup(function() {
+		if($(this).val() == '') {
+			$('#fieldset_username').removeClass('success');
+			$('#fieldset_username').removeClass('error');
+		} else {
+			$.post("http://xrsize.dev/user/username_check", 
+			{ user_name: $(this).val() },
+	        function(data) {
+	        	// console.log(data.returnvalue);
+	        	if(data.returnvalue == true) {
+					$('#fieldset_username').removeClass('error');
+	        		// $('#namecheck').html('Namnet finns inte än');
+	        		$('#fieldset_username').addClass('success');
+	        	} else {
+	        		$('#fieldset_username').removeClass('success');
+	        		// $('#namecheck').html('Namnet finns!');     
+	        		$('#fieldset_username').addClass('error');        		
+	        	}
+	        }, "json");     
 		}
 	});
 });

@@ -21,6 +21,10 @@ class Event extends CI_Controller {
 			redirect(base_url().'news/', 'refresh');
 		}
 	}
+	
+	public function calendar() {
+		$this->load->view('calendar');
+	}
 
 	public function delete() {
 		if(loggedin()){
@@ -46,40 +50,28 @@ class Event extends CI_Controller {
 	public function add_or_update() {
 		if(loggedin() ) {
 			if($this->input->post()) {
-				$this->form_validation->set_rules('date', 'Datum', 'required');
-				$this->form_validation->set_rules('date', 'Datum', 'min_length[8]');
-				$this->form_validation->run();
-				// if (valid_date($this->input->post('date'))) {
-
-					$this->load->model('Events_model');
-					$_POST['user_id'] = $this->session->userdata('id');
-					if($this->input->post('neweventtype') != "") {
-						$result = $this->Events_model->new_eventtype();
-						if($result) {
-							$_POST['eventtype_id'] = get_last_inserted_id();
-						}
-					}
-					unset($_POST['neweventtype']);
-					unset($_POST['addevent']);
-					$result = $this->Events_model->save_or_update();
+				$this->load->model('Events_model');
+				$_POST['user_id'] = $this->session->userdata('id');
+				
+				if($this->input->post('neweventtype') != "") {
+					$result = $this->Events_model->new_eventtype();
 					if($result) {
-						$data['success_mess'] = "Ditt träningstillfälle är nu skapat/uppdaterad.";
-						$data['content'] = "success";
-						$this->load->view('template', $data);
-					} else {
-						$data['error_mess'] = "Något gick fel när du skulle spara ditt träningstillfälle.";
-					$data['content'] = "error";
-					$this->load->view('template', $data);
+						$_POST['eventtype_id'] = get_last_inserted_id();
 					}
-					//redirect(base_url().'event/listing', 'refresh');
-				// }else{
-					// $this->form_validation->set_message('min_length[8]', 'Fältet %s är inte korrekt.');
-					// $data['content'] = 'event';
-					// $data['action'] = 'new';
-					// $this->load->model('Events_model');
-					// $data['eventtypes'] = $this->Events_model->get_eventtypes();
-					//$this->load->view('template', $data);
-				// }
+				}
+				unset($_POST['neweventtype']);
+				unset($_POST['addevent']);
+				
+				$result = $this->Events_model->save_or_update();
+				if($result) {
+					$data['success_mess'] = "Ditt träningstillfälle är nu skapat/uppdaterad.";
+					$data['content'] = "success";
+					$this->load->view('template', $data);
+				} else {
+					$data['error_mess'] = "Något gick fel när du skulle spara ditt träningstillfälle.";
+				$data['content'] = "error";
+				$this->load->view('template', $data);
+				}
 			} else {
 				$data['content'] = 'event';
 				$data['action'] = 'new';

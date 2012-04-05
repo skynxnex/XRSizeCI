@@ -223,6 +223,9 @@ body {
 #content #addevent h3 .ui-slider .ui-slider-handle {
   width: 20px;
 }
+#content #addevent .ui-datepicker-header {
+  height: 25px;
+}
 #content #addevent #datepicker {
   margin-bottom: 15px;
 }
@@ -433,4 +436,92 @@ body {
 }
 .event .calendar em:after {
   right: 13px;
+}
+/*
+ * CSS Calendar
+ * Tim Wright
+ * Chris Coyier
+ -----------------------------*/
+#my_calendar {
+  /*
+ * Day styles
+ -------------------------*/
+
+  /*
+ * Day content (UL/OL & P)
+ -------------------------*/
+
+  /*
+ * Holiday class
+ -------------------------*/
+
+  /*
+ * Inactive months
+ -------------------------*/
+
+}
+#my_calendar * {
+  margin: 0;
+  padding: 0;
+}
+#my_calendar body {
+  font: 1em/1.4 Verdana, Arial, Helvetica, sans-serif;
+  background: url(../images/bg.jpg) top center no-repeat #545454;
+}
+#my_calendar body * {
+  display: inline;
+}
+#my_calendar ol.calendar {
+  width: 52em;
+  margin: 0 auto;
+  display: block;
+  min-height: 200px;
+  background: url(../images/tl.png) top left no-repeat;
+  padding: 12px 0 0 20px;
+}
+#my_calendar li {
+  list-style: none;
+}
+#my_calendar p.link {
+  text-align: center;
+  display: block;
+}
+#my_calendar h1 {
+  display: block;
+  width: 200px;
+  height: 76px;
+  background: url(../images/july.png);
+  text-indent: -9999px;
+  margin: 15px auto;
+}
+#my_calendar li li {
+  width: 6em;
+  height: 6em;
+  float: left;
+  margin: .2em;
+  padding: .2em;
+  overflow: auto;
+  background: url(../images/day-bg.png) bottom right no-repeat;
+}
+#my_calendar li li p {
+  font-size: .7em;
+  display: block;
+}
+#my_calendar li li ol {
+  width: auto;
+}
+#my_calendar li li ul li,
+#my_calendar li li ol li {
+  font-size: .7em;
+  display: block;
+  height: auto;
+  width: auto;
+  background: none;
+  margin: 0;
+  padding: .2em 0;
+  float: none;
+}
+#my_calendar li#lastmonth li,
+#my_calendar li#nextmonth li {
+  background: url(../images/day-bg-inactive.png);
 }

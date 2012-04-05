@@ -11,18 +11,19 @@ Klar!
 10. Ändra i sin profil, byta lösenord
 6. Se egen statistik såsom antal poäng per vecka
 - Göra om datum, dela upp i år, månad, dag, vecka
+- Koppla profilbild till gravatar - hjälpsida om hur man uppdaterar sin profilbild
 ------------------------------------------------------
 
 - Få feedback på design, vad saknas? vad ska ändras?
 - Mina mål
 	- "progress bar"
 - Skapa användare, captcha bild för säkerhet
+- epost verifiering av konto
 - Se träningar i en kalender, tables med snygg css
 - Se översikt över året, varje månad och  nån graf
 - skapa grupp, bli gruppadmin
 - Gå med i grupp, ansöka till grupp, gruppadmin
 - Bjuda in kompisar till grupp
-- Koppla profilbild till gravatar - hjälpsida om hur man uppdaterar sin profilbild
 - Se andras statistik i gruppen
 - Stjärnligan, den som fått mest poäng hittills med max 180p/v (skippa? göra om?)
 - Lista träningsformer, skriva kommentarer och rejta
