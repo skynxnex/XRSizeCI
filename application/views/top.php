@@ -8,6 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap-responsive.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/jquery.ui.datepicker.css" />
+	<link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
 	
 	<script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>js/easySlider1.7.js" type="text/javascript"></script>

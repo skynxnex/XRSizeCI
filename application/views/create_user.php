@@ -8,11 +8,13 @@
 			<fieldset id="fieldset_username" class="control-group">
 				<label for="user_name">Användarnamn:</label>
 				<input id="user_name" name="user_name" class="required span4" type="text" />
-				
 			</fieldset>
+				
 			<span id="namecheck" class="pull-right"></span>
-			<label for="email">Epost:</label>
-			<input id="email" name="email" class="required span4" type="text" />
+			<fieldset id="fieldset_email" class="control-group">
+				<label for="email">Epost:</label>
+				<input id="email" name="email" class="required span4" type="text" />
+			</fieldset>
 			<label for="pass">Lösenord:</label>
 			<input id="pass" name="pass" class="required span4" type="password" />
 			<label for="pass2">Verifiera lösnord:</label>

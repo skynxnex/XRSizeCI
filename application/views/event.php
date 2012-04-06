@@ -1,6 +1,8 @@
 <?php
-	if($action != 'new'){
-		print_r( $event );
+	if($action == 'new') {
+		$event['year'] = date('Y');
+		$event['month'] = date('m');
+		$event['day'] = date('d');
 	}
 ?>
 <div id="content" class="span6">
@@ -65,13 +67,16 @@
 				<select id="day" class="select" name="day">
 					<?php 
 						for($i=1; $i<=31;$i++) {
-							if($action == 'edit') { 
+							if($action == 'edit') {
 								if($event['day'] == $i) { 
 									echo "<option selected='selected' value='".$i."'>".$i."</option>";
 								} else {
 									echo "<option value='".$i."'>".$i."</option>";
 								}
 							} else {
+								if($event['day'] == $i) {
+									echo "<option selected='selected' value='".$i."'>".$i."</option>";
+								} 
 								echo "<option value='".$i."'>".$i."</option>";
 							}
 						} 
@@ -83,9 +88,17 @@
 				<div id="slider"></div>
 					<p><select id="time" name="time">
 						<option <?php if($action == 'edit') { if($event['time'] == 30) { echo 'selected="selected"'; } } ?> value="30">30</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 35) { echo 'selected="selected"'; } } ?> value="35">35</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 40) { echo 'selected="selected"'; } } ?> value="40">40</option>
 						<option <?php if($action == 'edit') { if($event['time'] == 45) { echo 'selected="selected"'; } } ?> value="45">45</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 50) { echo 'selected="selected"'; } } ?> value="50">50</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 55) { echo 'selected="selected"'; } } ?> value="55">55</option>
 						<option <?php if($action == 'edit') { if($event['time'] == 60) { echo 'selected="selected"'; } } ?> value="60">60</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 65) { echo 'selected="selected"'; } } ?> value="60">65</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 70) { echo 'selected="selected"'; } } ?> value="60">70</option>
 						<option <?php if($action == 'edit') { if($event['time'] == 75) { echo 'selected="selected"'; } } ?> value="75">75</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 80) { echo 'selected="selected"'; } } ?> value="75">80</option>
+						<option <?php if($action == 'edit') { if($event['time'] == 85) { echo 'selected="selected"'; } } ?> value="75">85</option>
 						<option <?php if($action == 'edit') { if($event['time'] == 90) { echo 'selected="selected"'; } } ?> value="90">90</option>
 					</select></p>
 				</p>

@@ -253,6 +253,19 @@ class User extends CI_Controller {
 				}
 		}
 	}
+	
+	public function email_check() {
+		// Check in db if there is a email already
+		if($this->input->post()) {
+			$this->load->model('user_model');
+			$result = $this->user_model->email_check();
+				if($this->input->is_ajax_request()) {
+					echo json_encode(array("returnvalue" => $result));
+				} else {
+					return $response;
+				}
+		}
+	}
 }
 
 

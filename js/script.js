@@ -75,7 +75,7 @@ $(document).ready(function() {
 	$("#slider").slider({
 		max: 90,
 		min: 30,
-		step: 15,
+		step: 5,
 		value: $( "#time option:selected").text(),
 		slide: function(event, ui) {
 			time = ui.value;
@@ -138,7 +138,7 @@ $(document).ready(function() {
 	        	// console.log(data.returnvalue);
 	        	if(data.returnvalue == true) {
 					$('#fieldset_username').removeClass('error');
-	        		// $('#namecheck').html('Namnet finns inte än');
+	        		//$('#namecheck').html('Namnet finns inte än');
 	        		$('#fieldset_username').addClass('success');
 	        	} else {
 	        		$('#fieldset_username').removeClass('success');
@@ -146,6 +146,37 @@ $(document).ready(function() {
 	        		$('#fieldset_username').addClass('error');        		
 	        	}
 	        }, "json");     
+		}
+	});
+	
+	$('#email').keyup(function() {
+		if($(this).val() == '') {
+			$('#fieldset_email').removeClass('success');
+			$('#fieldset_email').removeClass('error');
+		} else {
+			$.post("http://xrsize.dev/user/email_check", 
+			{ email: $(this).val() },
+	        function(data) {
+	        	// console.log(data.returnvalue);
+	        	if(data.returnvalue == true) {
+					$('#fieldset_email').removeClass('error');
+	        		//$('#namecheck').html('Namnet finns inte än');
+	        		$('#fieldset_email').addClass('success');
+	        	} else {
+	        		$('#fieldset_email').removeClass('success');
+	        		// $('#namecheck').html('Namnet finns!');     
+	        		$('#fieldset_email').addClass('error');        		
+	        	}
+	        }, "json");     
+		}
+	});
+	
+	$('#create_user').validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			}
 		}
 	});
 });

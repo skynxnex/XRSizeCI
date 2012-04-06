@@ -64,4 +64,13 @@
 				return true;
 			}
 		}
+		
+		function email_check() {
+			$result = $this->db->get_where('user', array('email' => $this->input->post('email')));
+			if($result->row()) {
+				return false;
+			} else {
+				return true;
+			}
+		}
 	}

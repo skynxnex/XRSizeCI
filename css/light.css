@@ -103,8 +103,22 @@ blockquote,
 q {
   quotes: "" "";
 }
+h1,
+h2,
+h3,
+h4 {
+  /* font-family: 'Poiret One', cursive; */
+
+  font-family: 'Antic Slab', serif;
+}
 body {
   min-width: 900px;
+  /*
+	background-image: url("../images/background_gradient.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  */
+
 }
 #container {
   margin-right: auto;
@@ -197,6 +211,12 @@ body {
 }
 #content {
   min-height: 400px;
+}
+#content #create_user_content label.error {
+  float: none;
+  color: red;
+  padding-left: .5em;
+  vertical-align: top;
 }
 #content #create_user_content .box {
   margin-top: 20px;

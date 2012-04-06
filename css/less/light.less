@@ -21,6 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	outline: 0;
 }
 body {
+  
 	line-height: 1;
 	color: black;
 	background: white;
@@ -55,8 +56,19 @@ blockquote, q {
 @light-gray: #DCDCDC;
 @loginInputWidth: 245px;
 
+h1, h2, h3, h4 {
+  // font-family: 'Candal', sans-serif;
+  /* font-family: 'Poiret One', cursive; */
+  font-family: 'Antic Slab', serif;
+}
+
 body {
 	min-width: 900px;
+	/*
+	background-image: url("../images/background_gradient.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  */
 }
 
 #container {
@@ -167,6 +179,7 @@ body {
 #content {
 	min-height: 400px;
 	#create_user_content {
+	  label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
 		.box {
 			margin-top: 20px;
 		}
