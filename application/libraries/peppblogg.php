@@ -12,11 +12,15 @@ class Peppblogg {
 		if($groupId) {
 			$CI->load->model('Peppblog_model');
 			$results = $CI->Peppblog_model->get_last_blogs($groupId->group_id);
-			
-			foreach($results as $entry) {	
-				$name = $entry['name'];
-				$blog .= '<div class="peppbox"><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></div>';
-				// $blog .= '<tr><td><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></td></tr>';
+			if($results) {
+				foreach($results as $entry) {	
+					$name = $entry['name'];
+					$blog .= '<div class="peppbox"><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></div>';
+					// $blog .= '<tr><td><p>'.$entry['text'].'</p><p class="small">av '.$name.' den '.$entry['date'].'</p></td></tr>';
+				}
+				
+			} else {
+				$blog .= '<p>Inga inlägg i peppbloggen än.</p>';
 			}
 		} else {
 			$blog .= '<p>Du är inte medlem i någon grupp ännu!</p>';

@@ -1,7 +1,6 @@
 
 	<div id="rightmenu" class="span3">
-		<div id="peppheader"><h3>Peppbloggen</h3><h6>Senaste 10</h6></div>
-		<?php echo validation_errors(); ?>
+		<div id="peppheader"><h3><?php echo ucfirst(str_replace('_', ' ', group_name())); ?>s peppblogg</h3><h6>Senaste 10</h6></div>
 		<div id="eventblogg">
 			<table class="table table-striped">
 				<tbody>

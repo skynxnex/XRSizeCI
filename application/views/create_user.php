@@ -19,7 +19,7 @@
 			<input id="pass" name="pass" class="required span4" type="password" />
 			<label for="pass2">Verifiera lösnord:</label>
 			<input id="pass2" name="pass2" class="required span4" type="password" />
-			<p>Fyll i fältet nedan</p>
+			<!-- <p>Fyll i fältet nedan</p> -->
 			<div id="captcha">
 				<?php //echo $cap; ?>
 			</div>

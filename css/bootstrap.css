@@ -1384,7 +1384,7 @@ button.btn.small, input[type="submit"].btn.small {
   width: 14px;
   height: 14px;
   vertical-align: text-top;
-  background-image: url(../img/glyphicons-halflings.png);
+  background-image: url(../imgages/glyphicons_halflings.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   *margin-right: .3em;

@@ -115,6 +115,9 @@ body {
 }
 
 #leftmenu {
+  #logininfo{
+    margin-top: 10px;
+  }
 	#navigation {
 		margin-top: 30px;
 	}
@@ -136,6 +139,18 @@ body {
 	#uname, #password {
 		width: @loginInputWidth;
 	}
+  #login {
+    .profilepic {
+      float: left;
+      margin-right: 20px;
+      width: 25px;
+      height: 25px;
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
 }
 
 #rightmenu {
@@ -178,6 +193,9 @@ body {
 
 #content {
 	min-height: 400px;
+	label.error {
+    color: red;
+  }
 	#create_user_content {
 	  label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
 		.box {
@@ -284,7 +302,6 @@ body {
 		height: 80px;
 		float: left;
 		margin: 10px;
-		margin: 0;
 	}
 	.event {
 		.well {

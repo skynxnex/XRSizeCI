@@ -10,6 +10,16 @@ class User extends CI_Controller {
 		parent::__construct();
 	}
 	
+	public function index() {
+		if(loggedin() ) {
+			$this->session->set_userdata('menu', 'user_menu');
+			$data['content'] = 'dashboard';
+			$this->load->view('template', $data);
+		} else {
+			redirect(base_url().'news/', 'refresh');
+		}
+	}
+	
 	public function login() {
 		if( $this->input->post('login') ) {
 			$this->_dologin();
@@ -37,7 +47,6 @@ class User extends CI_Controller {
 			$data['content'] = 'profile';
 			$this->load->model('User_model');
 			$data['info'] = $this->User_model->getUserinfo();
-			$data['gravatar_info'] = md5( strtolower( trim($data['info']->email)));
 			$this->load->view('template', $data);
 		} else {
 			redirect(base_url().'news/', 'refresh');
@@ -157,10 +166,12 @@ class User extends CI_Controller {
 					if($pass == $checkpass) {
 						$success = true;
 						$sessiondata = array(
-								"user" 	=> 1,
-								"id"	=> $result['id'],
-								"name"	=> $result['name'],
-								"uname"	=> $result['user_name']
+								"menu"		=> 'user_menu',
+								"user" 		=> 1,
+								"id"		=> $result['id'],
+								"name"		=> $result['name'],
+								"uname"		=> $result['user_name'],
+								"gravatar"	=> md5( strtolower( trim($result['email'])))
 							);
 						$this->session->set_userdata($sessiondata);
 						if($result['admin'] == 100) {
@@ -192,7 +203,7 @@ class User extends CI_Controller {
 		}
 	}
 	
-	private function dologout() {
+	public function dologout() {
 		$this->session->sess_destroy();
 		delete_cookie('username');
 		delete_cookie('password');
@@ -264,6 +275,17 @@ class User extends CI_Controller {
 				} else {
 					return $response;
 				}
+		}
+	}
+	
+	public function goals() {
+		if(loggedin()) {
+			$data['content'] = 'goals';
+			$this->load->view('template', $data);
+		} else {
+			$data['error_mess'] = "Du måste vara inloggad för att kunna se dina mål.";
+			$data['content'] = "error";
+			$this->load->view('template', $data);
 		}
 	}
 }

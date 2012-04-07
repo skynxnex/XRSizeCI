@@ -5,12 +5,8 @@
 	$this->load->view('banner');
 	$this->load->view('top_menu');
 	$this->load->view('row_start');
-
-	if(loggedin()) {
-		$this->load->view('leftmenu_loggedin');
-	}else {
-		$this->load->view('leftmenu_login');
-	}
+	$this->load->view('leftmenu');
+	
 	
 	$this->load->view($content);
 	

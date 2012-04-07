@@ -9,14 +9,13 @@
 		}
 		
 		function get_last_blogs($groupid) {
-			$query = $this->db->query('
-						SELECT user.id, user.name, blogg.id, blogg.text, blogg.date, blogg.user_id
-						FROM `group`, user, blogg
-						WHERE user.group_id = group.id
-						AND blogg.user_id = user.id
-						AND group.id ='.$groupid.'
-						ORDER BY blogg.date DESC 
-						LIMIT 10');
+			$this->db->select('user.name, blogg.text, blogg.date, user.email');
+			$this->db->from('blogg');
+			$this->db->join('user', 'user.id = blogg.user_id');
+			$this->db->where('blogg.group_id', $groupid);
+			$this->db->limit(10);
+			$this->db->order_by("date", "desc");
+			$query = $this->db->get();
 			$result = $query->result_array();
 			return $result;
 		}
@@ -25,8 +24,15 @@
 			$date = date('Y-m-d H:i:s', time());
 			$data = array(	'text' => $this->input->post('text'),
 							'user_id' => $this->session->userdata('id'),
-							'date' => $date
+							'date' => $date,
+							'group_id' => $this->get_current_group_id()
 						);
 			$this->db->insert('blogg', $data);	
+		}
+		
+		private function get_current_group_id() {
+			$this->db->select('group_id');
+			$result = $this->db->get_where('user', array('id' => $this->session->userdata('id')));
+			return $result->row()->group_id;
 		}
 	}

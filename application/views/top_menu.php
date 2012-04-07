@@ -14,6 +14,7 @@
 					}
 					?>
 					<li class="<?php if(check_active_nav("about", "")) { echo 'active'; } ?>"><a href="<?php echo base_url(); ?>about">Om</a></li>
+					<?php echo group_nav(); ?>
 				</ul>
 				<form class="navbar-search pull-right search">
 	    			<input type="text" class="search-query disabled" placeholder="Sök (funkar inte än)">

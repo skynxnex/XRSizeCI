@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	$('.dropdown-toggle').dropdown();
+	
 	$('#miniEvent').load('/event/miniEvent');
 	var refreshMini = setInterval(
 	  	function() {
@@ -179,4 +181,6 @@ $(document).ready(function() {
 			}
 		}
 	});
+	
+	// $('#group_create').validate();
 });

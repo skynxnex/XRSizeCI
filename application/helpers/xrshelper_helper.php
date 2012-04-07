@@ -95,31 +95,59 @@ if ( ! function_exists('heading')) {
  * @return    boolean
  */
 
- function valid_date($str, $format = 'yyy/mm/dd')
- {
-        switch($format)
-        {
+	function valid_date($str, $format = 'yyy/mm/dd')  {
+		switch($format) {
+			case 'yyyy/mm/dd':
+				if(preg_match("/^(19\d\d|2\d\d\d)[\/|-](0?[1-9]|1[012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/", $str,$match) && checkdate($match[2],$match[3],$match[1])) {
+					return TRUE;
+				}
+			break;
+			case 'mm/dd/yyyy':
+				if(preg_match("/^(0?[1-9]|1[012])[\/|-](0?[1-9]|[12][0-9]|3[01])[\/|-](19\d\d|2\d\d\d)$/", $str,$match) && checkdate($match[1],$match[2],$match[3])) {
+					return TRUE;
+				}
+			break;
+			default: // 'dd/mm/yyyy'
+				if(preg_match("/^(0?[1-9]|[12][0-9]|3[01])[\/|-](0?[1-9]|1[012])[\/|-](19\d\d|2\d\d\d)$/", $str,$match) && checkdate($match[2],$match[1],$match[3])) {
+					return TRUE;
+				}
+			break;
+		}
+	return FALSE;
+	}
+ 
+	function group_nav() {
+		$CI =& get_instance();
+		$CI->load->model('group_model');
+		$groupNames = $CI->group_model->getUserGroupNames();
+		if(loggedin()) {
+			$menuitem = 	'<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+									Grupp
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">';
+					foreach($groupNames as $name) {
+						$menuitem .= '<li><a href="'.base_url().'group/show/'.$name->name.'">'.ucfirst(str_replace('_', ' ', $name->name)).'</a></li>';
+					}
+			$menuitem .= '
+									<li class="divider"></li>
+									<li><a href="'.base_url().'group/create">Skapa ny grupp</a></li>
+								</ul>
+							</li>';
+			
+			
+			return $menuitem;
+		}
+	}
+	
+	function group_name() {
+		$CI =& get_instance();
+		$CI->load->model('group_model');
+		return $CI->group_model->get_group_name();
+	}
 
-            case 'yyyy/mm/dd':
-                if(preg_match("/^(19\d\d|2\d\d\d)[\/|-](0?[1-9]|1[012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/", $str,$match) && checkdate($match[2],$match[3],$match[1]))
-                {
-                    return TRUE;
-                }
-            break;
-            case 'mm/dd/yyyy':
-                if(preg_match("/^(0?[1-9]|1[012])[\/|-](0?[1-9]|[12][0-9]|3[01])[\/|-](19\d\d|2\d\d\d)$/", $str,$match) && checkdate($match[1],$match[2],$match[3]))
-                {
-                    return TRUE;
-                }
-            break;
-            default: // 'dd/mm/yyyy'
-                if(preg_match("/^(0?[1-9]|[12][0-9]|3[01])[\/|-](0?[1-9]|1[012])[\/|-](19\d\d|2\d\d\d)$/", $str,$match) && checkdate($match[2],$match[1],$match[3]))
-                {
-                return TRUE;
-                }
-            break;
-
-        }
-        return FALSE;
- }
+	function group_admin() {
+		return false;
+	}
 }

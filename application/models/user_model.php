@@ -18,6 +18,7 @@
 			return $query->row();
 		}
 		
+		// get the current active group
 		function getUserGroupId() {
 			$this->db->select('group_id');
 			$this->db->where('id', $this->session->userdata('id'));
@@ -28,6 +29,9 @@
 			} else {
 				return false;
 			}
+		}
+		
+		function getAllUserGroup() {
 		}
 
 		function updateUser($data, $id) {
@@ -72,5 +76,16 @@
 			} else {
 				return true;
 			}
+		}
+		
+		public function update_current_group() {
+			$this->db->select('id');
+			$result = $this->db->get_where('group', array('name' => $this->uri->segment(3)));
+			$id = $result->row()->id;
+			$data = array(
+				'group_id' => $id
+			);
+			$this->db->where('id', $this->session->userdata('id'));
+			$this->db->update('user', $data);
 		}
 	}

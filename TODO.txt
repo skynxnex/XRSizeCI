@@ -23,6 +23,8 @@ Klar!
 - Se översikt över året, varje månad och  nån graf
 - skapa grupp, bli gruppadmin
 - Gå med i grupp, ansöka till grupp, gruppadmin
+- Gruppadmin kan ändra bannerbilder och text för sin grupp
+- Kunna välja färg för grupp
 - Bjuda in kompisar till grupp
 - Se andras statistik i gruppen
 - Stjärnligan, den som fått mest poäng hittills med max 180p/v (skippa? göra om?)

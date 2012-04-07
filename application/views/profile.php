@@ -1,7 +1,7 @@
 <div id="content" class="span6">
 	<div id="profile">
 		<h2>Din profil</h2>
-		<div class="profilepic"><img src="http://www.gravatar.com/avatar/<?php echo $gravatar_info; ?>?d=mm" alt="" /></div>
+		<div class="profilepic"><img src="http://www.gravatar.com/avatar/<?php echo $this->session->userdata('gravatar'); ?>?d=mm" alt="" /></div>
 		<div class="infocontent">
 			<p>
 				<span class="span2">Användarnamn: </span> 
