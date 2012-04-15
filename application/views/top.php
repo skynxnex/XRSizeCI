@@ -22,7 +22,6 @@
 	<script src="<?php echo base_url(); ?>js/jquery.validate.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>js/script.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>js/bootstrap.js" type="text/javascript"></script>
-	<script src="<?php echo base_url(); ?>js/bootstrap-dropdown.js" type="text/javascript"></script>
 </head>
 
 <body>

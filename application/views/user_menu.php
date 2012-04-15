@@ -25,6 +25,11 @@
 			<li <?php if(check_active_nav("stats", "stars")) { echo 'class="active"'; } ?>>
 				<a href="<?php echo base_url(); ?>stats/stars">Stjärnligan</a>
 			</li>
+			<?php if($this->session->userdata('admin')) { ?>
+				<li <?php if(check_active_nav("admin", "")) { echo 'class="active"'; } ?>>
+					<a href="<?php echo base_url(); ?>admin">Siteadmininstration</a>
+				</li>
+			<?php } ?>
 		</ul>
 	</div>
 </div>

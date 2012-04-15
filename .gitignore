@@ -3,3 +3,4 @@ XRSizeCI.sublime-project
 XRSizeCI.sublime-workspace
 .project
 adminer/*
+application/config/database.php

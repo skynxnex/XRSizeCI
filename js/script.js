@@ -2,6 +2,51 @@ $(document).ready(function() {
 	
 	$('.dropdown-toggle').dropdown();
 	
+	$('#hours').hide();
+	$('#hourschoose').click(function() {
+		if ($("#hourschoose").is(":checked")) {
+			$("#hours").show("slow");
+		} else {
+			$("#hours").hide("slow");
+		}
+	});
+	
+	$('#times').hide();
+	$('#timeschoose').click(function() {
+		if ($("#timeschoose").is(":checked")) {
+			$("#times").show("slow");
+		} else {
+			$("#times").hide("slow");
+		}
+	});
+	
+	$("#name_group").hide();
+	$('#yes').click(function () {
+		$("#name_group").show("slow");
+		$('#name_group').autocomplete({
+			source: 'user/namegroup'
+		});
+	});
+	$('#no').click(function () {
+		$("#name_group").hide("slow");
+		
+		console.log("to yes");
+	});
+	
+	
+	$('#fromdate').datepicker({
+		dateFormat: "yy-mm-dd",
+		onSelect: function(text) {
+			$('#start').attr('value', text);
+		}
+	});
+	$('#todate').datepicker({
+		dateFormat: "yy-mm-dd",
+		onSelect: function(text) {
+			$('#stop').attr('value', text);
+		}
+	});
+	
 	$('#miniEvent').load('/event/miniEvent');
 	var refreshMini = setInterval(
 	  	function() {

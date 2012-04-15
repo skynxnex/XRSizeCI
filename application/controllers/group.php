@@ -18,25 +18,24 @@ class Group extends CI_Controller {
 	
 	public function members() {
 		if(loggedin()) {
-			$this->session->set_userdata('menu', 'group_menu');
-			$this->load->model('user_model');
-			$data['content'] = 'empty_content';
-			$this->load->view('template', $data);	
+			$this->load->model('group_model');
+			$data['members'] = $this->group_model->get_group_members();
+			$data['owner_id' ] = $this->group_model->get_group_owner();
+			$data['admins'] = $this->group_model->get_group_admins();
+			$data['content'] = 'group_members';
+			$this->load->view('template', $data);
 		}
 	}
 	
 	public function goals() {
 		if(loggedin()) {
-			$this->session->set_userdata('menu', 'group_menu');
-			$this->load->model('user_model');
-			$data['content'] = 'empty_content';
+			$data['content'] = 'goals';
 			$this->load->view('template', $data);	
 		}
 	}
 	
 	public function challenges() {
 		if(loggedin()) {
-			$this->session->set_userdata('menu', 'group_menu');
 			$this->load->model('user_model');
 			$data['content'] = 'empty_content';
 			$this->load->view('template', $data);	

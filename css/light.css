@@ -222,11 +222,27 @@ body {
 #rightmenu p {
   margin: 0px;
 }
+#newgoal {
+  float: left;
+}
+#newgoal .span1,
+#newgoal .span2 {
+  margin: 0px;
+}
+#newgoal #goaltype {
+  margin-top: 10px;
+}
+#newgoal .span3 {
+  margin: 0px;
+}
 #content {
   min-height: 400px;
 }
 #content label.error {
   color: red;
+}
+#content .member_info {
+  margin-top: 30px;
 }
 #content #create_user_content label.error {
   float: none;
